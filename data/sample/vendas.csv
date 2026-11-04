@@ -1,456 +1,229 @@
 data,id_venda,sku,quantidade,preco_unitario,desconto,forma_pagamento,vendedor,cliente
-2026-08-07,V0001,CEL-004,1,1299.0,55.59,Pix,Ana,Brenda Alves
-2026-08-07,V0001,CEL-002,1,1999.0,0.0,Pix,Ana,Brenda Alves
-2026-08-07,V0002,CEL-001,1,1499.0,0.0,Crédito parcelado,Maria,Sra. Isabelly Câmara
-2026-08-08,V0003,CEL-006,1,799.0,0.0,Crédito à vista,Ana,Cauã Rocha
-2026-08-08,V0004,CEL-002,1,1999.0,0.0,Crédito parcelado,Maria,Dra. Aurora Pastor
-2026-08-08,V0005,ACE-004,3,34.9,0.0,Pix,Ana,Ana Beatriz Alves
-2026-08-08,V0005,ACE-002,2,29.9,0.0,Pix,Ana,Ana Beatriz Alves
-2026-08-08,V0006,ACE-005,3,149.9,0.0,Pix,Pedro,Henrique da Conceição
-2026-08-08,V0007,ACE-005,1,149.9,4.9,Crédito parcelado,Pedro,Amanda Novais
-2026-08-08,V0007,ACE-007,1,229.9,0.0,Crédito parcelado,Pedro,Amanda Novais
-2026-08-08,V0007,CEL-001,1,1499.0,0.0,Crédito parcelado,Pedro,Amanda Novais
-2026-08-08,V0008,ACE-004,3,34.9,6.77,Débito,Ana,Yago Leão
-2026-08-08,V0009,ACE-004,3,34.9,0.0,Pix,Carlos,Pietro Pastor
-2026-08-08,V0010,ACE-007,1,229.9,0.0,Crédito parcelado,Carlos,André Teixeira
-2026-08-09,V0011,CEL-004,1,1299.0,0.0,Crédito à vista,Pedro,Otávio Fernandes
-2026-08-09,V0012,ACE-001,3,39.9,0.0,Pix,Ana,Eduardo Cunha
-2026-08-09,V0012,ACE-006,3,139.9,0.0,Pix,Ana,Eduardo Cunha
-2026-08-09,V0012,ACE-007,3,229.9,0.0,Pix,Ana,Eduardo Cunha
-2026-08-09,V0013,CEL-005,1,3299.0,0.0,Crédito parcelado,Ana,Sr. Caleb Garcia
-2026-08-09,V0013,ACE-005,1,149.9,0.0,Crédito parcelado,Ana,Sr. Caleb Garcia
-2026-08-10,V0014,ACE-005,3,149.9,0.0,Crédito parcelado,Ana,Luiz Henrique Ferreira
-2026-08-10,V0015,ACE-007,2,229.9,0.0,Pix,Carlos,Julia Aparecida
-2026-08-10,V0016,CEL-004,1,1299.0,0.0,Crédito parcelado,Carlos,Sra. Zoe Campos
-2026-08-10,V0016,ACE-007,3,229.9,0.0,Crédito parcelado,Carlos,Sra. Zoe Campos
-2026-08-11,V0017,MOTO-002,1,10990.0,0.0,Dinheiro,Carlos,Anna Liz Novaes
-2026-08-11,V0018,ACE-003,2,79.9,5.35,Crédito parcelado,Pedro,Luiz Miguel Oliveira
-2026-08-11,V0019,ACE-002,3,29.9,0.0,Pix,Maria,Bernardo Aparecida
-2026-08-12,V0020,MOTO-002,1,10990.0,539.88,Pix,Carlos,Heloísa Vargas
-2026-08-12,V0021,ACE-005,3,149.9,0.0,Débito,Pedro,Bruno da Conceição
-2026-08-13,V0022,ACE-003,2,79.9,0.0,Débito,Maria,Mateus da Mota
-2026-08-13,V0023,CEL-004,1,1299.0,0.0,Débito,Carlos,Maria Clara Castro
-2026-08-13,V0023,ACE-007,1,229.9,8.04,Débito,Carlos,Maria Clara Castro
-2026-08-13,V0023,CEL-002,1,1999.0,0.0,Débito,Carlos,Maria Clara Castro
-2026-08-13,V0024,ACE-005,1,149.9,0.0,Pix,Maria,Dr. Gustavo Henrique Rios
-2026-08-14,V0025,ACE-002,2,29.9,0.0,Crédito parcelado,Carlos,Brayan Pereira
-2026-08-14,V0026,CEL-004,1,1299.0,30.54,Pix,Ana,Eloá Nascimento
-2026-08-14,V0026,CEL-006,1,799.0,0.0,Pix,Ana,Eloá Nascimento
-2026-08-14,V0026,PEC-002,1,389.0,15.1,Pix,Ana,Eloá Nascimento
-2026-08-14,V0027,ACE-007,3,229.9,0.0,Pix,Maria,Srta. Elisa Martins
-2026-08-15,V0028,ACE-002,2,29.9,0.0,Pix,Carlos,Júlia Porto
-2026-08-15,V0029,CEL-006,1,799.0,0.0,Crédito à vista,Ana,Dra. Hellena Rodrigues
-2026-08-15,V0030,ACE-002,2,29.9,0.0,Pix,Ana,Sr. Ian Andrade
-2026-08-15,V0031,BIKE-001,1,3790.0,0.0,Pix,Carlos,Dr. João Felipe Azevedo
-2026-08-15,V0031,ACE-005,1,149.9,6.14,Pix,Carlos,Dr. João Felipe Azevedo
-2026-08-15,V0032,CEL-003,1,999.0,0.0,Pix,Ana,Levi Cunha
-2026-08-16,V0033,ACE-005,2,149.9,0.0,Dinheiro,Maria,Sara Gonçalves
-2026-08-16,V0034,CEL-001,1,1499.0,84.38,Crédito parcelado,Carlos,Natália Casa Grande
-2026-08-16,V0035,CEL-006,1,799.0,59.52,Crédito parcelado,Pedro,Davi Miguel da Cruz
-2026-08-17,V0036,ACE-003,1,79.9,0.0,Pix,Carlos,Dra. Zoe da Luz
-2026-08-17,V0037,ACE-005,3,149.9,34.49,Débito,Maria,Dra. Mariane Pacheco
-2026-08-18,V0038,ACE-005,3,149.9,18.83,Pix,Carlos,Maria Cecília Câmara
-2026-08-18,V0039,PEC-001,1,1690.0,0.0,Crédito à vista,Maria,Thomas Monteiro
-2026-08-18,V0039,MOTO-001,1,7490.0,0.0,Crédito à vista,Maria,Thomas Monteiro
-2026-08-18,V0040,PEC-001,1,1690.0,0.0,Crédito parcelado,Carlos,Benicio Camargo
-2026-08-18,V0040,BIKE-001,1,3790.0,243.29,Crédito parcelado,Carlos,Benicio Camargo
-2026-08-19,V0041,ACE-006,3,139.9,0.0,Crédito parcelado,Maria,Emanuel Vieira
-2026-08-19,V0041,ACE-003,1,79.9,3.85,Crédito parcelado,Maria,Emanuel Vieira
-2026-08-19,V0042,MOTO-002,1,10990.0,655.03,Pix,Carlos,Mariana Peixoto
-2026-08-19,V0043,CEL-001,1,1499.0,0.0,Dinheiro,Ana,Matheus Garcia
-2026-08-19,V0044,ACE-007,3,229.9,53.95,Pix,Maria,Nina Moura
-2026-08-20,V0045,ACE-003,3,79.9,0.0,Crédito parcelado,Pedro,Yuri Albuquerque
-2026-08-20,V0046,ACE-005,1,149.9,11.32,Pix,Pedro,Bruna Rodrigues
-2026-08-20,V0047,ACE-006,3,139.9,0.0,Crédito à vista,Ana,Juliana Vargas
-2026-08-20,V0048,BIKE-001,1,3790.0,0.0,Crédito parcelado,Ana,Manuela Camargo
-2026-08-20,V0048,ACE-001,3,39.9,0.0,Crédito parcelado,Ana,Manuela Camargo
-2026-08-21,V0049,ACE-004,3,34.9,0.0,Crédito parcelado,Carlos,Pedro Henrique Castro
-2026-08-21,V0050,ACE-001,2,39.9,0.0,Pix,Pedro,Agatha Silveira
-2026-08-21,V0051,CEL-004,1,1299.0,0.0,Débito,Carlos,Sra. Sarah Teixeira
-2026-08-21,V0052,PEC-001,1,1690.0,130.33,Crédito à vista,Ana,Thiago Caldeira
-2026-08-21,V0052,ACE-003,3,79.9,9.26,Crédito à vista,Ana,Thiago Caldeira
-2026-08-21,V0053,CEL-001,1,1499.0,0.0,Crédito à vista,Maria,Letícia Porto
-2026-08-21,V0053,CEL-004,1,1299.0,0.0,Crédito à vista,Maria,Letícia Porto
-2026-08-21,V0054,ACE-004,2,34.9,0.0,Pix,Carlos,Fernanda Cassiano
-2026-08-22,V0055,ACE-001,2,39.9,0.0,Débito,Maria,Sr. Vitor Hugo Vasconcelos
-2026-08-22,V0055,CEL-006,1,799.0,0.0,Débito,Maria,Sr. Vitor Hugo Vasconcelos
-2026-08-22,V0056,CEL-004,1,1299.0,0.0,Crédito à vista,Ana,Agatha Peixoto
-2026-08-22,V0057,ACE-006,3,139.9,0.0,Crédito parcelado,Pedro,Dr. Antony Camargo
-2026-08-22,V0057,ACE-005,2,149.9,0.0,Crédito parcelado,Pedro,Dr. Antony Camargo
-2026-08-22,V0058,CEL-005,1,3299.0,132.46,Débito,Ana,Dr. Isaque Araújo
-2026-08-22,V0058,ACE-002,2,29.9,0.0,Débito,Ana,Dr. Isaque Araújo
-2026-08-22,V0059,CEL-004,1,1299.0,57.75,Crédito à vista,Carlos,Bruno Barros
-2026-08-23,V0060,CEL-004,1,1299.0,0.0,Pix,Maria,Sra. Ana Lívia Teixeira
-2026-08-23,V0061,ACE-001,2,39.9,0.0,Crédito parcelado,Pedro,Carolina Cardoso
-2026-08-23,V0061,CEL-004,1,1299.0,0.0,Crédito parcelado,Pedro,Carolina Cardoso
-2026-08-23,V0062,MOTO-002,1,10990.0,0.0,Débito,Pedro,Olívia Novaes
-2026-08-23,V0062,CEL-004,1,1299.0,0.0,Débito,Pedro,Olívia Novaes
-2026-08-24,V0063,BIKE-001,1,3790.0,173.27,Crédito à vista,Maria,João Moura
-2026-08-24,V0063,MOTO-003,1,4990.0,0.0,Crédito à vista,Maria,João Moura
-2026-08-24,V0064,CEL-003,1,999.0,0.0,Pix,Ana,Mariana Cunha
-2026-08-24,V0065,CEL-004,1,1299.0,0.0,Débito,Maria,Gabriela Silva
-2026-08-24,V0065,CEL-001,1,1499.0,0.0,Débito,Maria,Gabriela Silva
-2026-08-25,V0066,ACE-007,1,229.9,11.13,Crédito parcelado,Carlos,Murilo Rios
-2026-08-25,V0066,BIKE-001,1,3790.0,291.32,Crédito parcelado,Carlos,Murilo Rios
-2026-08-25,V0067,CEL-003,1,999.0,0.0,Pix,Maria,Maria Fernanda Macedo
-2026-08-26,V0068,CEL-001,1,1499.0,99.46,Pix,Carlos,Milena Campos
-2026-08-26,V0068,BIKE-001,1,3790.0,0.0,Pix,Carlos,Milena Campos
-2026-08-26,V0068,ACE-006,1,139.9,0.0,Pix,Carlos,Milena Campos
-2026-08-26,V0069,PEC-001,1,1690.0,0.0,Pix,Pedro,Henry Gabriel Azevedo
-2026-08-26,V0070,ACE-001,2,39.9,0.0,Crédito parcelado,Maria,Sr. Yuri da Conceição
-2026-08-27,V0071,ACE-006,3,139.9,0.0,Dinheiro,Ana,Hellena Abreu
-2026-08-27,V0072,ACE-004,2,34.9,0.0,Pix,Carlos,Bento da Conceição
-2026-08-27,V0072,ACE-005,2,149.9,21.85,Pix,Carlos,Bento da Conceição
-2026-08-27,V0073,ACE-005,3,149.9,0.0,Pix,Maria,Arthur Gabriel Farias
-2026-08-27,V0074,ACE-003,2,79.9,0.0,Pix,Ana,Théo da Costa
-2026-08-27,V0075,CEL-002,1,1999.0,0.0,Crédito parcelado,Pedro,Ryan Cunha
-2026-08-28,V0076,ACE-004,2,34.9,3.09,Crédito parcelado,Maria,Caroline Silveira
-2026-08-28,V0077,ACE-003,2,79.9,0.0,Crédito à vista,Ana,Olívia da Cruz
-2026-08-28,V0078,CEL-006,1,799.0,21.76,Débito,Ana,Maria Luísa Correia
-2026-08-29,V0079,ACE-007,3,229.9,0.0,Pix,Carlos,Calebe Ribeiro
-2026-08-29,V0080,ACE-007,3,229.9,0.0,Crédito à vista,Maria,Maria Lima
-2026-08-29,V0081,ACE-003,1,79.9,6.27,Crédito parcelado,Carlos,Nina Siqueira
-2026-08-29,V0082,ACE-002,3,29.9,1.86,Crédito parcelado,Pedro,Carlos Eduardo Araújo
-2026-08-29,V0083,ACE-003,1,79.9,0.0,Dinheiro,Ana,Maitê Caldeira
-2026-08-29,V0084,ACE-004,2,34.9,4.79,Pix,Maria,Gael Correia
-2026-08-30,V0085,CEL-005,1,3299.0,0.0,Crédito parcelado,Carlos,Melissa Carvalho
-2026-08-30,V0086,MOTO-002,1,10990.0,0.0,Crédito parcelado,Pedro,Emilly da Mota
-2026-08-31,V0087,PEC-001,1,1690.0,0.0,Dinheiro,Carlos,Isadora Barbosa
-2026-08-31,V0088,CEL-002,1,1999.0,88.98,Pix,Maria,Beatriz Aragão
-2026-08-31,V0089,ACE-001,1,39.9,0.0,Pix,Ana,Ágatha Albuquerque
-2026-08-31,V0090,ACE-003,3,79.9,0.0,Crédito à vista,Carlos,Isaac Cavalcante
-2026-08-31,V0091,ACE-003,1,79.9,0.0,Pix,Carlos,Raquel Mendes
-2026-08-31,V0092,ACE-003,2,79.9,0.0,Pix,Ana,Murilo Araújo
-2026-09-01,V0093,ACE-001,3,39.9,0.0,Pix,Pedro,Mateus Abreu
-2026-09-01,V0094,CEL-002,1,1999.0,0.0,Dinheiro,Maria,Julia Viana
-2026-09-01,V0095,CEL-001,1,1499.0,0.0,Crédito parcelado,Carlos,Laura Lima
-2026-09-01,V0096,MOTO-001,1,7490.0,0.0,Boleto,Pedro,Dra. Raquel Cassiano
-2026-09-02,V0097,ACE-004,2,34.9,0.0,Crédito à vista,Ana,Juan Cunha
-2026-09-02,V0097,CEL-001,1,1499.0,0.0,Crédito à vista,Ana,Juan Cunha
-2026-09-02,V0097,ACE-003,2,79.9,0.0,Crédito à vista,Ana,Juan Cunha
-2026-09-02,V0098,CEL-003,1,999.0,0.0,Pix,Pedro,Vitor Hugo Araújo
-2026-09-02,V0099,CEL-005,1,3299.0,0.0,Débito,Pedro,Sra. Ana Laura Aragão
-2026-09-02,V0099,ACE-001,1,39.9,0.0,Débito,Pedro,Sra. Ana Laura Aragão
-2026-09-02,V0100,ACE-003,2,79.9,12.53,Crédito parcelado,Pedro,Pietra Montenegro
-2026-09-02,V0101,CEL-002,1,1999.0,0.0,Pix,Maria,Eduarda Araújo
-2026-09-03,V0102,ACE-001,2,39.9,0.0,Dinheiro,Carlos,Anna Liz Cirino
-2026-09-03,V0103,ACE-003,2,79.9,8.48,Crédito parcelado,Pedro,Bernardo Rocha
-2026-09-04,V0104,ACE-006,1,139.9,0.0,Crédito parcelado,Ana,Nathan Campos
-2026-09-04,V0105,CEL-005,1,3299.0,0.0,Pix,Ana,Isadora Pacheco
-2026-09-04,V0105,CEL-001,1,1499.0,0.0,Pix,Ana,Isadora Pacheco
-2026-09-04,V0106,MOTO-002,1,10990.0,0.0,Débito,Ana,Ana Cecília Pinto
-2026-09-04,V0107,ACE-003,1,79.9,0.0,Crédito à vista,Carlos,Otto Ribeiro
-2026-09-04,V0107,PEC-001,1,1690.0,0.0,Crédito à vista,Carlos,Otto Ribeiro
-2026-09-04,V0108,ACE-007,2,229.9,0.0,Pix,Carlos,Stephany Dias
-2026-09-05,V0109,PEC-002,1,389.0,29.03,Crédito parcelado,Pedro,Gustavo Rios
-2026-09-05,V0110,CEL-006,1,799.0,0.0,Dinheiro,Maria,Sra. Isabella da Luz
-2026-09-05,V0111,CEL-006,1,799.0,0.0,Pix,Ana,Caroline Rios
-2026-09-05,V0111,ACE-001,2,39.9,0.0,Pix,Ana,Caroline Rios
-2026-09-05,V0111,ACE-007,3,229.9,0.0,Pix,Ana,Caroline Rios
-2026-09-05,V0112,ACE-002,3,29.9,0.0,Crédito à vista,Ana,Letícia Marques
-2026-09-05,V0113,ACE-001,3,39.9,0.0,Crédito parcelado,Maria,Sr. Anthony Marques
-2026-09-06,V0114,CEL-003,1,999.0,0.0,Crédito parcelado,Ana,Beatriz Barbosa
-2026-09-06,V0115,CEL-004,1,1299.0,32.13,Crédito à vista,Carlos,Hadassa Montenegro
-2026-09-06,V0116,ACE-002,2,29.9,0.0,Pix,Ana,Davi Lucca Ferreira
-2026-09-06,V0116,MOTO-001,1,7490.0,0.0,Pix,Ana,Davi Lucca Ferreira
-2026-09-07,V0117,ACE-002,1,29.9,0.0,Pix,Pedro,Joaquim Freitas
-2026-09-07,V0117,ACE-003,3,79.9,0.0,Pix,Pedro,Joaquim Freitas
-2026-09-07,V0118,PEC-002,1,389.0,0.0,Pix,Pedro,Emanuel Macedo
-2026-09-07,V0119,PEC-002,1,389.0,20.99,Pix,Pedro,Liz Pimenta
-2026-09-07,V0120,ACE-001,3,39.9,0.0,Crédito parcelado,Ana,Vitória Albuquerque
-2026-09-07,V0121,ACE-002,3,29.9,0.0,Pix,Ana,Letícia Ribeiro
-2026-09-08,V0122,MOTO-003,1,4990.0,209.04,Pix,Pedro,Davi Luiz da Luz
-2026-09-08,V0123,MOTO-002,1,10990.0,738.43,Crédito parcelado,Carlos,Cauê Souza
-2026-09-08,V0124,ACE-005,2,149.9,0.0,Dinheiro,Ana,Daniela da Mata
-2026-09-08,V0124,ACE-003,2,79.9,0.0,Dinheiro,Ana,Daniela da Mata
-2026-09-09,V0125,PEC-002,1,389.0,16.99,Dinheiro,Ana,Gustavo Henrique Silva
-2026-09-09,V0126,CEL-003,1,999.0,0.0,Crédito à vista,Ana,Sr. João Montenegro
-2026-09-10,V0127,CEL-001,1,1499.0,0.0,Crédito à vista,Ana,Isis Aragão
-2026-09-10,V0128,CEL-004,1,1299.0,0.0,Crédito parcelado,Ana,Otávio da Mota
-2026-09-10,V0129,CEL-001,1,1499.0,51.1,Pix,Pedro,Alexandre Farias
-2026-09-10,V0130,ACE-003,3,79.9,0.0,Dinheiro,Pedro,João Castro
-2026-09-11,V0131,ACE-005,2,149.9,12.66,Dinheiro,Ana,Sra. Mariane Novais
-2026-09-11,V0132,BIKE-001,1,3790.0,0.0,Pix,Ana,Daniel Barbosa
-2026-09-11,V0133,ACE-004,2,34.9,0.0,Pix,Carlos,Srta. Ísis Andrade
-2026-09-11,V0133,CEL-001,1,1499.0,0.0,Pix,Carlos,Srta. Ísis Andrade
-2026-09-11,V0133,BIKE-001,1,3790.0,254.72,Pix,Carlos,Srta. Ísis Andrade
-2026-09-11,V0134,CEL-005,1,3299.0,0.0,Pix,Carlos,Sr. Pedro Cardoso
-2026-09-11,V0135,CEL-002,1,1999.0,0.0,Pix,Carlos,Leandro Fonseca
-2026-09-11,V0135,ACE-005,1,149.9,0.0,Pix,Carlos,Leandro Fonseca
-2026-09-12,V0136,MOTO-001,1,7490.0,0.0,Pix,Carlos,Luiz Henrique Costela
-2026-09-12,V0137,CEL-002,1,1999.0,0.0,Crédito parcelado,Maria,Isadora Rios
-2026-09-12,V0138,ACE-005,3,149.9,0.0,Pix,Carlos,Luiz Gustavo Vasconcelos
-2026-09-12,V0139,ACE-007,3,229.9,0.0,Débito,Pedro,Maria Luísa Pinto
-2026-09-12,V0140,PEC-002,1,389.0,0.0,Débito,Maria,Srta. Isabela Castro
-2026-09-12,V0141,CEL-001,1,1499.0,0.0,Pix,Ana,Noah Alves
-2026-09-12,V0141,CEL-002,1,1999.0,0.0,Pix,Ana,Noah Alves
-2026-09-13,V0142,PEC-002,1,389.0,24.16,Débito,Pedro,Lucas Gabriel Viana
-2026-09-13,V0143,ACE-007,3,229.9,0.0,Débito,Carlos,Isadora da Mata
-2026-09-13,V0143,ACE-002,2,29.9,0.0,Débito,Carlos,Isadora da Mata
-2026-09-13,V0144,ACE-003,2,79.9,0.0,Pix,Ana,Cauê Garcia
-2026-09-14,V0145,ACE-001,2,39.9,0.0,Pix,Ana,Ravy Câmara
-2026-09-14,V0146,ACE-005,3,149.9,0.0,Pix,Maria,Raul Ferreira
-2026-09-14,V0147,BIKE-001,1,3790.0,0.0,Pix,Ana,Ian Câmara
-2026-09-14,V0147,MOTO-003,1,4990.0,0.0,Pix,Ana,Ian Câmara
-2026-09-14,V0148,CEL-006,1,799.0,0.0,Débito,Maria,Gael Guerra
-2026-09-14,V0149,CEL-003,1,999.0,0.0,Crédito à vista,Pedro,Dr. Bernardo Vargas
-2026-09-15,V0150,ACE-005,3,149.9,16.37,Crédito parcelado,Ana,Luiz Fernando Ramos
-2026-09-15,V0151,BIKE-001,1,3790.0,244.3,Crédito à vista,Pedro,Maria Liz Rocha
-2026-09-15,V0151,CEL-002,1,1999.0,0.0,Crédito à vista,Pedro,Maria Liz Rocha
-2026-09-15,V0152,ACE-004,2,34.9,0.0,Débito,Carlos,Luísa Alves
-2026-09-15,V0153,ACE-005,3,149.9,29.35,Pix,Maria,José Pedro Cavalcanti
-2026-09-15,V0154,CEL-004,1,1299.0,0.0,Crédito à vista,Pedro,Julia Andrade
-2026-09-15,V0155,CEL-005,1,3299.0,200.23,Pix,Pedro,Pedro Henrique Ferreira
-2026-09-16,V0156,CEL-004,1,1299.0,49.47,Boleto,Maria,Sra. Maya Pereira
-2026-09-16,V0157,CEL-003,1,999.0,64.76,Pix,Maria,Bruna Gomes
-2026-09-16,V0158,ACE-006,1,139.9,10.03,Débito,Ana,Esther da Cunha
-2026-09-16,V0159,CEL-001,1,1499.0,0.0,Crédito parcelado,Pedro,Pedro Henrique Abreu
-2026-09-16,V0160,ACE-001,2,39.9,6.13,Pix,Ana,Zoe Rodrigues
-2026-09-16,V0161,ACE-003,1,79.9,4.42,Débito,Maria,Dra. Fernanda Fonseca
-2026-09-17,V0162,MOTO-003,1,4990.0,0.0,Pix,Ana,Ana Lívia Rios
-2026-09-17,V0163,ACE-005,3,149.9,0.0,Pix,Ana,Dr. Davi Silveira
-2026-09-17,V0164,ACE-002,1,29.9,1.98,Pix,Maria,Thiago das Neves
-2026-09-17,V0164,CEL-003,1,999.0,0.0,Pix,Maria,Thiago das Neves
-2026-09-17,V0164,CEL-005,1,3299.0,0.0,Pix,Maria,Thiago das Neves
-2026-09-17,V0165,ACE-005,3,149.9,10.84,Pix,Ana,Maria Luísa Duarte
-2026-09-17,V0166,CEL-003,1,999.0,0.0,Crédito à vista,Ana,Laís Novaes
-2026-09-17,V0167,ACE-001,2,39.9,0.0,Crédito parcelado,Maria,Gael Leão
-2026-09-18,V0168,ACE-004,3,34.9,0.0,Crédito à vista,Maria,Maria Helena Rocha
-2026-09-18,V0169,ACE-003,3,79.9,0.0,Débito,Ana,Srta. Liz Guerra
-2026-09-18,V0169,ACE-002,1,29.9,1.76,Débito,Ana,Srta. Liz Guerra
-2026-09-19,V0170,ACE-004,3,34.9,0.0,Débito,Carlos,Agatha da Rosa
-2026-09-19,V0171,ACE-007,2,229.9,0.0,Crédito à vista,Maria,Gustavo Henrique Lopes
-2026-09-19,V0171,ACE-001,3,39.9,0.0,Crédito à vista,Maria,Gustavo Henrique Lopes
-2026-09-19,V0172,CEL-006,1,799.0,0.0,Dinheiro,Carlos,Luna Martins
-2026-09-19,V0173,CEL-003,1,999.0,62.47,Pix,Pedro,Melina Rocha
-2026-09-19,V0174,ACE-006,2,139.9,0.0,Crédito parcelado,Maria,Thomas Melo
-2026-09-20,V0175,CEL-003,1,999.0,0.0,Pix,Carlos,Srta. Antonella da Paz
-2026-09-20,V0176,CEL-002,1,1999.0,0.0,Crédito parcelado,Maria,Lívia Borges
-2026-09-20,V0176,CEL-003,1,999.0,0.0,Crédito parcelado,Maria,Lívia Borges
-2026-09-21,V0177,ACE-005,2,149.9,0.0,Crédito parcelado,Carlos,Leonardo Câmara
-2026-09-21,V0177,CEL-002,1,1999.0,83.67,Crédito parcelado,Carlos,Leonardo Câmara
-2026-09-21,V0178,PEC-002,1,389.0,13.36,Crédito parcelado,Pedro,Diogo Alves
-2026-09-21,V0179,ACE-007,1,229.9,0.0,Débito,Pedro,Joaquim Melo
-2026-09-21,V0179,ACE-005,2,149.9,0.0,Débito,Pedro,Joaquim Melo
-2026-09-21,V0179,ACE-003,2,79.9,0.0,Débito,Pedro,Joaquim Melo
-2026-09-21,V0180,CEL-006,1,799.0,0.0,Débito,Ana,Ana Sophia Marques
-2026-09-22,V0181,CEL-002,1,1999.0,149.19,Pix,Pedro,Evelyn Silva
-2026-09-22,V0181,CEL-005,1,3299.0,0.0,Pix,Pedro,Evelyn Silva
-2026-09-22,V0182,BIKE-001,1,3790.0,0.0,Pix,Pedro,Sra. Sabrina Guerra
-2026-09-22,V0182,CEL-005,1,3299.0,0.0,Pix,Pedro,Sra. Sabrina Guerra
-2026-09-22,V0183,BIKE-001,1,3790.0,284.42,Crédito parcelado,Carlos,Diogo Rezende
-2026-09-22,V0184,ACE-007,3,229.9,0.0,Débito,Maria,Srta. Bianca Vasconcelos
-2026-09-22,V0185,CEL-002,1,1999.0,74.53,Débito,Pedro,Hellena Cavalcanti
-2026-09-22,V0186,CEL-004,1,1299.0,91.19,Crédito à vista,Pedro,Dra. Nicole Aragão
-2026-09-23,V0187,ACE-002,3,29.9,3.69,Pix,Pedro,Isadora Campos
-2026-09-23,V0188,CEL-006,1,799.0,41.2,Pix,Ana,Catarina Martins
-2026-09-23,V0189,PEC-001,1,1690.0,73.03,Pix,Pedro,Vitória Novais
-2026-09-23,V0190,ACE-003,1,79.9,0.0,Pix,Maria,Luiza Sá
-2026-09-23,V0191,CEL-001,1,1499.0,0.0,Pix,Ana,Sofia Lima
-2026-09-23,V0192,ACE-004,3,34.9,0.0,Débito,Carlos,Melissa Castro
-2026-09-24,V0193,CEL-002,1,1999.0,0.0,Crédito parcelado,Ana,Sra. Milena da Luz
-2026-09-24,V0194,PEC-002,1,389.0,27.9,Pix,Carlos,João Guilherme Vargas
-2026-09-24,V0195,ACE-003,1,79.9,0.0,Crédito parcelado,Pedro,Raquel Pires
-2026-09-24,V0196,MOTO-002,1,10990.0,0.0,Pix,Carlos,João Guilherme Macedo
-2026-09-24,V0197,BIKE-001,1,3790.0,212.8,Crédito parcelado,Pedro,João Pedro da Costa
-2026-09-25,V0198,CEL-001,1,1499.0,0.0,Pix,Ana,Lucas Gabriel Dias
-2026-09-25,V0199,ACE-006,2,139.9,0.0,Pix,Maria,Anna Liz Carvalho
-2026-09-25,V0200,ACE-004,2,34.9,0.0,Pix,Pedro,Igor Gomes
-2026-09-25,V0200,ACE-007,1,229.9,0.0,Pix,Pedro,Igor Gomes
-2026-09-26,V0201,CEL-005,1,3299.0,79.29,Crédito à vista,Pedro,Srta. Hadassa Azevedo
-2026-09-26,V0202,ACE-004,3,34.9,0.0,Crédito à vista,Ana,Maria Luísa Farias
-2026-09-26,V0202,CEL-002,1,1999.0,0.0,Crédito à vista,Ana,Maria Luísa Farias
-2026-09-26,V0203,ACE-004,2,34.9,0.0,Crédito à vista,Carlos,Nina Leão
-2026-09-26,V0204,CEL-005,1,3299.0,117.5,Pix,Maria,Gustavo Leão
-2026-09-26,V0205,PEC-002,1,389.0,10.95,Crédito à vista,Pedro,Alícia Teixeira
-2026-09-26,V0206,CEL-006,1,799.0,0.0,Débito,Maria,Maria Helena Mendes
-2026-09-26,V0207,PEC-002,1,389.0,0.0,Crédito parcelado,Carlos,Luiz Gustavo da Rosa
-2026-09-26,V0207,ACE-005,3,149.9,0.0,Crédito parcelado,Carlos,Luiz Gustavo da Rosa
-2026-09-26,V0207,CEL-003,1,999.0,32.03,Crédito parcelado,Carlos,Luiz Gustavo da Rosa
-2026-09-26,V0208,ACE-001,2,39.9,0.0,Crédito à vista,Ana,Mariah Nascimento
-2026-09-26,V0209,CEL-001,1,1499.0,0.0,Débito,Pedro,Dra. Ísis Pereira
-2026-09-26,V0209,CEL-004,1,1299.0,101.77,Débito,Pedro,Dra. Ísis Pereira
-2026-09-26,V0209,PEC-002,1,389.0,0.0,Débito,Pedro,Dra. Ísis Pereira
-2026-09-26,V0210,ACE-003,1,79.9,0.0,Crédito parcelado,Carlos,Ryan Câmara
-2026-09-27,V0211,CEL-001,1,1499.0,0.0,Pix,Carlos,Pedro Henrique Mendonça
-2026-09-27,V0211,ACE-003,1,79.9,0.0,Pix,Carlos,Pedro Henrique Mendonça
-2026-09-27,V0212,ACE-003,1,79.9,0.0,Pix,Ana,Mathias Fernandes
-2026-09-27,V0212,ACE-005,2,149.9,17.53,Pix,Ana,Mathias Fernandes
-2026-09-27,V0213,ACE-002,3,29.9,0.0,Crédito à vista,Ana,Maria Luiza Silveira
-2026-09-28,V0214,MOTO-001,1,7490.0,0.0,Pix,Ana,Ravi Lucca Cardoso
-2026-09-28,V0215,ACE-006,1,139.9,0.0,Débito,Ana,Yasmin Alves
-2026-09-28,V0216,ACE-003,2,79.9,0.0,Pix,Pedro,Amanda Barros
-2026-09-28,V0216,CEL-001,1,1499.0,84.54,Pix,Pedro,Amanda Barros
-2026-09-28,V0217,ACE-006,2,139.9,0.0,Dinheiro,Carlos,Mariane Carvalho
-2026-09-28,V0218,CEL-002,1,1999.0,0.0,Débito,Ana,Emilly Aragão
-2026-09-28,V0219,CEL-004,1,1299.0,93.42,Crédito parcelado,Pedro,Mateus Duarte
-2026-09-29,V0220,BIKE-001,1,3790.0,0.0,Débito,Pedro,Rafael Duarte
-2026-09-29,V0220,CEL-002,1,1999.0,0.0,Débito,Pedro,Rafael Duarte
-2026-09-29,V0221,BIKE-001,1,3790.0,0.0,Dinheiro,Carlos,Dr. João Lucas Sá
-2026-09-29,V0222,CEL-005,1,3299.0,67.6,Crédito parcelado,Pedro,Isis Barros
-2026-09-30,V0223,ACE-007,2,229.9,0.0,Crédito à vista,Carlos,Allana Souza
-2026-09-30,V0223,ACE-004,1,34.9,1.51,Crédito à vista,Carlos,Allana Souza
-2026-09-30,V0224,ACE-007,3,229.9,17.79,Crédito à vista,Maria,Ana Júlia Ferreira
-2026-09-30,V0225,PEC-002,1,389.0,0.0,Crédito parcelado,Carlos,Bernardo Vasconcelos
-2026-10-01,V0226,CEL-004,1,1299.0,0.0,Débito,Carlos,Ana Cecília Sá
-2026-10-01,V0227,CEL-005,1,3299.0,0.0,Pix,Pedro,Josué Costa
-2026-10-02,V0228,ACE-005,3,149.9,0.0,Débito,Ana,Eduardo da Costa
-2026-10-02,V0229,CEL-001,1,1499.0,0.0,Dinheiro,Ana,Renan Rios
-2026-10-02,V0230,ACE-001,3,39.9,0.0,Débito,Carlos,Henrique Martins
-2026-10-02,V0231,CEL-006,1,799.0,48.61,Crédito parcelado,Pedro,Sra. Maria Eduarda Cavalcante
-2026-10-03,V0232,ACE-002,1,29.9,1.84,Débito,Pedro,Bruna Vasconcelos
-2026-10-03,V0233,ACE-004,3,34.9,0.0,Crédito parcelado,Carlos,Leonardo Caldeira
-2026-10-03,V0234,PEC-002,1,389.0,0.0,Débito,Ana,Amanda das Neves
-2026-10-03,V0235,ACE-005,2,149.9,0.0,Crédito à vista,Ana,Maria Flor Gonçalves
-2026-10-03,V0236,CEL-005,1,3299.0,0.0,Pix,Ana,Srta. Ana Vitória Pastor
-2026-10-04,V0237,CEL-003,1,999.0,54.35,Crédito à vista,Ana,Dra. Isabelly Caldeira
-2026-10-04,V0238,MOTO-002,1,10990.0,409.46,Crédito parcelado,Carlos,Sra. Bárbara Vieira
-2026-10-04,V0239,ACE-004,3,34.9,7.3,Pix,Pedro,Ana Cecília Ferreira
-2026-10-05,V0240,ACE-002,1,29.9,0.0,Pix,Carlos,Mariane Ribeiro
-2026-10-05,V0240,ACE-005,1,149.9,6.72,Pix,Carlos,Mariane Ribeiro
-2026-10-05,V0241,CEL-002,1,1999.0,0.0,Pix,Carlos,Sr. Thiago Ramos
-2026-10-05,V0242,MOTO-002,1,10990.0,0.0,Pix,Maria,Sr. Otto Mendonça
-2026-10-05,V0242,ACE-007,2,229.9,25.04,Pix,Maria,Sr. Otto Mendonça
-2026-10-05,V0243,ACE-001,1,39.9,0.0,Débito,Carlos,Pedro Fonseca
-2026-10-06,V0244,ACE-004,1,34.9,0.0,Pix,Maria,Natália Santos
-2026-10-06,V0244,BIKE-001,1,3790.0,0.0,Pix,Maria,Natália Santos
-2026-10-06,V0244,MOTO-001,1,7490.0,0.0,Pix,Maria,Natália Santos
-2026-10-06,V0245,ACE-002,3,29.9,0.0,Débito,Carlos,Pedro Henrique Cavalcanti
-2026-10-07,V0246,ACE-003,3,79.9,0.0,Pix,Ana,Dra. Júlia Pimenta
-2026-10-07,V0247,ACE-002,3,29.9,0.0,Crédito parcelado,Pedro,Rafaela Martins
-2026-10-07,V0248,CEL-006,1,799.0,0.0,Pix,Carlos,Juliana Duarte
-2026-10-07,V0249,CEL-004,1,1299.0,0.0,Dinheiro,Ana,Caio da Mota
-2026-10-07,V0249,CEL-003,1,999.0,0.0,Dinheiro,Ana,Caio da Mota
-2026-10-08,V0250,ACE-001,3,39.9,7.32,Pix,Ana,Isabelly Sá
-2026-10-08,V0251,MOTO-002,1,10990.0,307.88,Pix,Carlos,Maria Helena Fernandes
-2026-10-08,V0251,ACE-006,2,139.9,18.15,Pix,Carlos,Maria Helena Fernandes
-2026-10-08,V0252,ACE-005,2,149.9,0.0,Crédito parcelado,Carlos,Thales Duarte
-2026-10-08,V0253,ACE-007,1,229.9,12.38,Débito,Ana,Ryan Cunha
-2026-10-09,V0254,ACE-002,2,29.9,1.93,Crédito parcelado,Pedro,Dr. Luigi da Mota
-2026-10-09,V0255,CEL-005,1,3299.0,0.0,Débito,Maria,Kamilly Novais
-2026-10-09,V0256,ACE-001,3,39.9,0.0,Débito,Ana,Valentim Correia
-2026-10-09,V0257,ACE-006,1,139.9,0.0,Crédito à vista,Maria,Isaque Silveira
-2026-10-09,V0258,ACE-001,1,39.9,1.78,Boleto,Pedro,Rebeca Novais
-2026-10-09,V0259,ACE-006,3,139.9,0.0,Boleto,Pedro,Renan Ramos
-2026-10-09,V0259,PEC-002,1,389.0,0.0,Boleto,Pedro,Renan Ramos
-2026-10-10,V0260,ACE-006,3,139.9,33.4,Pix,Ana,Sra. Melissa Vieira
-2026-10-10,V0261,CEL-002,1,1999.0,0.0,Crédito parcelado,Maria,Caleb da Rocha
-2026-10-10,V0262,ACE-004,3,34.9,4.27,Pix,Carlos,Nathan Sales
-2026-10-10,V0263,BIKE-001,1,3790.0,0.0,Pix,Pedro,Leandro Ribeiro
-2026-10-10,V0264,MOTO-001,1,7490.0,0.0,Crédito à vista,Pedro,Maria Eduarda Melo
-2026-10-10,V0264,CEL-001,1,1499.0,0.0,Crédito à vista,Pedro,Maria Eduarda Melo
-2026-10-10,V0265,ACE-004,2,34.9,0.0,Pix,Carlos,Vitória Ferreira
-2026-10-10,V0266,CEL-003,1,999.0,72.5,Crédito à vista,Ana,Luísa Fogaça
-2026-10-10,V0266,CEL-006,1,799.0,0.0,Crédito à vista,Ana,Luísa Fogaça
-2026-10-10,V0267,ACE-003,1,79.9,0.0,Crédito à vista,Carlos,Sra. Júlia das Neves
-2026-10-11,V0268,CEL-006,1,799.0,0.0,Crédito à vista,Ana,Igor Campos
-2026-10-11,V0269,CEL-002,1,1999.0,67.01,Crédito parcelado,Pedro,Srta. Luara Campos
-2026-10-12,V0270,MOTO-003,1,4990.0,160.68,Débito,Pedro,Dra. Ester Correia
-2026-10-12,V0270,ACE-004,3,34.9,0.0,Débito,Pedro,Dra. Ester Correia
-2026-10-12,V0271,ACE-001,3,39.9,0.0,Pix,Maria,Rodrigo da Mota
-2026-10-12,V0271,ACE-002,1,29.9,1.96,Pix,Maria,Rodrigo da Mota
-2026-10-12,V0272,ACE-004,1,34.9,0.0,Crédito parcelado,Ana,Dra. Valentina Peixoto
-2026-10-13,V0273,PEC-001,1,1690.0,0.0,Crédito parcelado,Carlos,Carlos Eduardo Correia
-2026-10-13,V0273,ACE-007,2,229.9,18.07,Crédito parcelado,Carlos,Carlos Eduardo Correia
-2026-10-13,V0274,ACE-006,2,139.9,0.0,Pix,Ana,Ian Fonseca
-2026-10-13,V0275,CEL-006,1,799.0,0.0,Débito,Ana,Kevin Albuquerque
-2026-10-14,V0276,CEL-002,1,1999.0,152.09,Crédito parcelado,Maria,Dra. Carolina da Mota
-2026-10-14,V0277,ACE-002,1,29.9,0.0,Pix,Pedro,Benjamim Novaes
-2026-10-14,V0278,ACE-006,2,139.9,0.0,Pix,Pedro,Davi Lucas Porto
-2026-10-14,V0279,ACE-002,3,29.9,4.74,Crédito parcelado,Carlos,Bella Albuquerque
-2026-10-15,V0280,ACE-006,1,139.9,0.0,Dinheiro,Maria,Larissa Melo
-2026-10-15,V0280,ACE-007,1,229.9,0.0,Dinheiro,Maria,Larissa Melo
-2026-10-15,V0281,CEL-006,1,799.0,46.55,Débito,Ana,Maysa Fernandes
-2026-10-15,V0281,CEL-002,1,1999.0,0.0,Débito,Ana,Maysa Fernandes
-2026-10-15,V0282,ACE-001,1,39.9,0.0,Pix,Ana,Benjamim da Cunha
-2026-10-15,V0282,ACE-004,1,34.9,1.75,Pix,Ana,Benjamim da Cunha
-2026-10-16,V0283,MOTO-001,1,7490.0,0.0,Pix,Carlos,Bruna Azevedo
-2026-10-16,V0283,MOTO-003,1,4990.0,205.92,Pix,Carlos,Bruna Azevedo
-2026-10-16,V0284,CEL-004,1,1299.0,0.0,Pix,Maria,Rebeca Barbosa
-2026-10-16,V0284,ACE-002,3,29.9,0.0,Pix,Maria,Rebeca Barbosa
-2026-10-16,V0285,CEL-004,1,1299.0,91.87,Crédito à vista,Carlos,Ana Júlia Cassiano
-2026-10-16,V0285,ACE-004,1,34.9,0.0,Crédito à vista,Carlos,Ana Júlia Cassiano
-2026-10-16,V0286,PEC-001,1,1690.0,125.19,Crédito parcelado,Maria,Kevin Barros
-2026-10-16,V0287,ACE-003,1,79.9,0.0,Dinheiro,Ana,Dante Novais
-2026-10-17,V0288,ACE-001,1,39.9,0.0,Crédito à vista,Pedro,Heloisa Vasconcelos
-2026-10-17,V0289,ACE-005,2,149.9,0.0,Crédito à vista,Ana,Maria Helena Machado
-2026-10-17,V0290,ACE-006,3,139.9,19.4,Pix,Ana,Letícia Pastor
-2026-10-17,V0291,CEL-005,1,3299.0,120.08,Dinheiro,Ana,Lorena Nunes
-2026-10-17,V0291,PEC-002,1,389.0,0.0,Dinheiro,Ana,Lorena Nunes
-2026-10-17,V0292,ACE-004,2,34.9,3.99,Pix,Pedro,Ana Liz Pimenta
-2026-10-18,V0293,CEL-002,1,1999.0,0.0,Pix,Carlos,Srta. Giovanna Pires
-2026-10-19,V0294,CEL-003,1,999.0,25.21,Débito,Ana,João Ribeiro
-2026-10-19,V0295,ACE-005,2,149.9,0.0,Pix,Maria,Emanuel da Costa
-2026-10-19,V0296,ACE-003,2,79.9,0.0,Pix,Pedro,Yuri Barbosa
-2026-10-19,V0297,MOTO-001,1,7490.0,0.0,Crédito à vista,Carlos,Alexandre Jesus
-2026-10-20,V0298,CEL-004,1,1299.0,0.0,Pix,Carlos,Olivia da Rocha
-2026-10-20,V0299,ACE-001,2,39.9,0.0,Pix,Carlos,Igor da Paz
-2026-10-20,V0300,ACE-004,1,34.9,0.0,Pix,Maria,Sra. Mirella Barbosa
-2026-10-21,V0301,ACE-007,2,229.9,0.0,Dinheiro,Carlos,Isabel da Luz
-2026-10-21,V0301,ACE-004,3,34.9,0.0,Dinheiro,Carlos,Isabel da Luz
-2026-10-21,V0302,ACE-002,2,29.9,0.0,Dinheiro,Ana,Fernanda Lima
-2026-10-21,V0303,PEC-001,1,1690.0,0.0,Pix,Ana,Yago Câmara
-2026-10-21,V0304,CEL-005,1,3299.0,0.0,Pix,Carlos,Clarice da Mata
-2026-10-22,V0305,ACE-006,1,139.9,0.0,Débito,Ana,Brayan Araújo
-2026-10-22,V0306,ACE-007,2,229.9,0.0,Crédito à vista,Carlos,Leandro Peixoto
-2026-10-22,V0307,ACE-006,2,139.9,0.0,Crédito parcelado,Maria,Dra. Laura Macedo
-2026-10-22,V0308,ACE-005,3,149.9,0.0,Dinheiro,Pedro,Ravi Lucca Sales
-2026-10-22,V0309,ACE-007,3,229.9,39.15,Crédito parcelado,Ana,Nathan da Mata
-2026-10-22,V0309,ACE-001,1,39.9,0.0,Crédito parcelado,Ana,Nathan da Mata
-2026-10-22,V0310,ACE-007,2,229.9,11.92,Dinheiro,Pedro,Ágatha Monteiro
-2026-10-23,V0311,ACE-005,3,149.9,0.0,Crédito à vista,Pedro,Anna Liz Peixoto
-2026-10-23,V0312,ACE-006,3,139.9,0.0,Pix,Maria,Pedro Sousa
-2026-10-23,V0313,BIKE-001,1,3790.0,0.0,Pix,Carlos,Dr. Apollo Borges
-2026-10-24,V0314,ACE-004,3,34.9,2.37,Crédito à vista,Ana,Antônio Teixeira
-2026-10-24,V0315,CEL-003,1,999.0,0.0,Crédito à vista,Carlos,Juliana Oliveira
-2026-10-24,V0316,ACE-005,1,149.9,0.0,Pix,Pedro,Erick Melo
-2026-10-24,V0317,ACE-002,1,29.9,0.0,Crédito à vista,Pedro,Melina da Mota
-2026-10-24,V0318,MOTO-002,1,10990.0,361.44,Crédito à vista,Pedro,Pedro Henrique Porto
-2026-10-24,V0319,ACE-007,1,229.9,0.0,Crédito à vista,Carlos,Ayla Melo
-2026-10-24,V0320,CEL-006,1,799.0,0.0,Crédito parcelado,Ana,Dr. Lucas Gabriel Duarte
-2026-10-24,V0321,ACE-003,2,79.9,0.0,Crédito parcelado,Carlos,Bella Castro
-2026-10-24,V0322,CEL-005,1,3299.0,0.0,Crédito à vista,Carlos,Dr. Thales da Paz
-2026-10-25,V0323,CEL-006,1,799.0,0.0,Pix,Pedro,Maria Liz Teixeira
-2026-10-26,V0324,ACE-004,3,34.9,0.0,Débito,Carlos,Ana Carolina Marques
-2026-10-26,V0325,CEL-003,1,999.0,0.0,Crédito parcelado,Maria,Levi da Cunha
-2026-10-26,V0326,ACE-002,2,29.9,0.0,Crédito parcelado,Pedro,Sr. Nathan Moraes
-2026-10-26,V0326,PEC-002,1,389.0,8.5,Crédito parcelado,Pedro,Sr. Nathan Moraes
-2026-10-26,V0326,ACE-004,2,34.9,0.0,Crédito parcelado,Pedro,Sr. Nathan Moraes
-2026-10-27,V0327,CEL-003,1,999.0,0.0,Pix,Pedro,Vitor Hugo Martins
-2026-10-27,V0328,ACE-005,1,149.9,0.0,Crédito parcelado,Ana,Ana Júlia Correia
-2026-10-27,V0328,ACE-003,3,79.9,0.0,Crédito parcelado,Ana,Ana Júlia Correia
-2026-10-27,V0329,ACE-002,2,29.9,0.0,Crédito parcelado,Ana,Maria Cecília Pinto
-2026-10-27,V0329,CEL-006,1,799.0,28.58,Crédito parcelado,Ana,Maria Cecília Pinto
-2026-10-27,V0330,CEL-001,1,1499.0,0.0,Crédito parcelado,Ana,Melina Teixeira
-2026-10-27,V0330,ACE-002,1,29.9,0.0,Crédito parcelado,Ana,Melina Teixeira
-2026-10-28,V0331,CEL-002,1,1999.0,0.0,Crédito parcelado,Maria,Gustavo da Mata
-2026-10-28,V0332,ACE-002,2,29.9,2.16,Dinheiro,Ana,Caroline da Paz
-2026-10-28,V0333,PEC-001,1,1690.0,0.0,Crédito parcelado,Ana,Raquel Campos
-2026-10-28,V0333,CEL-004,1,1299.0,93.48,Crédito parcelado,Ana,Raquel Campos
-2026-10-28,V0334,ACE-007,1,229.9,0.0,Crédito parcelado,Pedro,Isaque Santos
-2026-10-28,V0335,CEL-004,1,1299.0,0.0,Pix,Maria,Leonardo Novaes
-2026-10-29,V0336,ACE-006,2,139.9,0.0,Débito,Pedro,Yuri Jesus
-2026-10-29,V0337,ACE-006,1,139.9,0.0,Crédito parcelado,Pedro,Henry Gabriel Camargo
-2026-10-30,V0338,ACE-004,1,34.9,0.0,Débito,Ana,Bárbara Ramos
-2026-10-30,V0338,PEC-001,1,1690.0,0.0,Débito,Ana,Bárbara Ramos
-2026-10-30,V0339,ACE-004,2,34.9,4.02,Crédito parcelado,Maria,Theo Silva
-2026-10-30,V0340,CEL-002,1,1999.0,0.0,Pix,Carlos,Thomas Santos
-2026-10-30,V0340,ACE-001,2,39.9,0.0,Pix,Carlos,Thomas Santos
-2026-10-30,V0341,MOTO-001,1,7490.0,430.95,Pix,Carlos,Oliver Mendes
-2026-10-30,V0341,ACE-003,1,79.9,0.0,Pix,Carlos,Oliver Mendes
-2026-10-31,V0342,CEL-001,1,1499.0,83.38,Pix,Pedro,Isabelly Marques
-2026-10-31,V0343,ACE-001,3,39.9,0.0,Pix,Maria,Clara Gomes
-2026-10-31,V0344,CEL-001,1,1499.0,0.0,Pix,Maria,Thomas Souza
-2026-10-31,V0345,CEL-003,1,999.0,0.0,Pix,Carlos,Bernardo da Mota
-2026-10-31,V0346,CEL-005,1,3299.0,0.0,Pix,Carlos,Manuela Viana
-2026-10-31,V0347,ACE-002,2,29.9,0.0,Crédito à vista,Pedro,Juliana Abreu
-2026-11-01,V0348,CEL-006,1,799.0,0.0,Pix,Pedro,Kaique Pastor
-2026-11-02,V0349,ACE-002,3,29.9,0.0,Crédito à vista,Ana,Rebeca Cassiano
-2026-11-02,V0350,ACE-006,2,139.9,0.0,Pix,Carlos,Zoe Mendes
-2026-11-02,V0351,CEL-002,1,1999.0,116.51,Débito,Maria,Dr. Yuri Teixeira
-2026-11-03,V0352,PEC-002,1,389.0,0.0,Dinheiro,Carlos,Maria Flor Marques
-2026-11-03,V0353,ACE-005,3,149.9,10.82,Dinheiro,Maria,Sr. Isaque Oliveira
-2026-11-03,V0353,CEL-004,1,1299.0,29.08,Dinheiro,Maria,Sr. Isaque Oliveira
-2026-11-04,V0354,ACE-003,3,79.9,12.51,Débito,Pedro,Isabel Vasconcelos
-2026-11-04,V0354,ACE-007,2,229.9,0.0,Débito,Pedro,Isabel Vasconcelos
-2026-11-04,V0355,CEL-005,1,3299.0,0.0,Dinheiro,Carlos,Ana Clara Dias
+2026-08-07,V0001,CEL-003,1,999.0,70.78,Pix,Pedro,Brenda Alves
+2026-08-07,V0002,PERF-006,1,59.9,0.0,Cartão de débito,Maria,Sra. Isabelly Câmara
+2026-08-08,V0003,ACE-006,3,139.9,0.0,Cartão de crédito,Ana,Cauã Rocha
+2026-08-08,V0004,CEL-002,1,1999.0,0.0,Cartão de crédito,Maria,Dra. Aurora Pastor
+2026-08-08,V0005,ACE-004,3,34.9,0.0,Pix,Carlos,Ana Beatriz Alves
+2026-08-08,V0005,PERF-002,1,289.9,0.0,Pix,Carlos,Ana Beatriz Alves
+2026-08-08,V0006,CEL-006,1,799.0,34.17,Pix,Carlos,Henrique da Conceição
+2026-08-09,V0007,CEL-003,1,999.0,21.9,Cartão de crédito,Maria,Amanda Novais
+2026-08-09,V0008,CEL-002,1,1999.0,99.86,Cartão de crédito,Ana,Yago Leão
+2026-08-10,V0009,CEL-006,1,799.0,0.0,Cartão de débito,Ana,Pietro Pastor
+2026-08-10,V0010,ACE-003,1,79.9,0.0,Dinheiro,Carlos,André Teixeira
+2026-08-10,V0011,CEL-001,1,1499.0,0.0,Pix,Carlos,Otávio Fernandes
+2026-08-11,V0012,ACE-005,2,149.9,0.0,Cartão de débito,Maria,Eduardo Cunha
+2026-08-11,V0013,PERF-003,1,169.9,7.83,Cartão de crédito,Ana,Sr. Caleb Garcia
+2026-08-11,V0014,MOTO-003,1,4990.0,0.0,Pix,Carlos,Luiz Henrique Ferreira
+2026-08-13,V0015,ACE-002,1,29.9,0.0,Cartão de débito,Maria,Julia Aparecida
+2026-08-13,V0016,CEL-003,1,999.0,34.42,Cartão de crédito,Ana,Sra. Zoe Campos
+2026-08-14,V0017,CEL-004,1,1299.0,0.0,Cartão de crédito,Carlos,Anna Liz Novaes
+2026-08-14,V0017,PERF-005,1,149.9,0.0,Cartão de crédito,Carlos,Anna Liz Novaes
+2026-08-14,V0018,ACE-005,2,149.9,0.0,Dinheiro,Carlos,Luiz Miguel Oliveira
+2026-08-14,V0019,PERF-003,1,169.9,5.69,Pix,Pedro,Bernardo Aparecida
+2026-08-14,V0020,ACE-002,3,29.9,0.0,Pix,Maria,Heloísa Vargas
+2026-08-15,V0021,PERF-003,1,169.9,8.35,Pix,Carlos,Bruno da Conceição
+2026-08-16,V0022,PERF-005,1,149.9,0.0,Cartão de débito,Carlos,Mateus da Mota
+2026-08-16,V0023,CEL-001,1,1499.0,0.0,Pix,Pedro,Maria Clara Castro
+2026-08-16,V0023,PERF-003,1,169.9,10.06,Pix,Pedro,Maria Clara Castro
+2026-08-19,V0024,PERF-001,1,219.9,0.0,Pix,Carlos,Dr. Gustavo Henrique Rios
+2026-08-19,V0025,CEL-004,1,1299.0,0.0,Pix,Maria,Brayan Pereira
+2026-08-19,V0026,ACE-001,0,39.9,5.88,Dinheiro,Carlos,Eloá Nascimento
+2026-08-19,V0026,MOTO-001,1,7490.0,330.03,Dinheiro,Carlos,Eloá Nascimento
+2026-08-21,V0027,MOTO-002,1,10990.0,679.13,Cartão de crédito,Pedro,Srta. Elisa Martins
+2026-08-22,V0028,ACE-002,2,29.9,0.0,Pix,Maria,Júlia Porto
+2026-08-22,V0029,PERF-001,1,219.9,0.0,Pix,Pedro,Dra. Hellena Rodrigues
+2026-08-22,V0030,CEL-005,1,3299.0,0.0,Pix,Maria,Sr. Ian Andrade
+2026-08-22,V0030,CEL-002,1,1999.0,54.36,Pix,Maria,Sr. Ian Andrade
+2026-08-22,V0031,CEL-005,1,3299.0,0.0,Pix,Ana,Dr. João Felipe Azevedo
+2026-08-22,V0031,CEL-001,1,1499.0,94.39,Pix,Ana,Dr. João Felipe Azevedo
+2026-08-22,V0032,ACE-006,3,139.9,0.0,Pix,Ana,Levi Cunha
+2026-08-25,V0033,ACE-001,1,39.9,1.63,Cartão de débito,Ana,Sara Gonçalves
+2026-08-25,V0034,CEL-003,1,999.0,0.0,Pix,Ana,Natália Casa Grande
+2026-08-25,V0035,PERF-001,1,219.9,16.14,Dinheiro,Carlos,Davi Miguel da Cruz
+2026-08-25,V0035,PERF-005,1,149.9,0.0,Dinheiro,Carlos,Davi Miguel da Cruz
+2026-08-25,V0035,ACE-006,1,139.9,5.16,Dinheiro,Carlos,Davi Miguel da Cruz
+2026-08-26,V0036,CEL-006,1,799.0,59.52,Cartão de crédito,Pedro,Dra. Zoe da Luz
+2026-08-29,V0037,CEL-003,1,999.0,0.0,Dinheiro,Carlos,Dra. Mariane Pacheco
+2026-08-29,V0037,PERF-006,1,59.9,0.0,Dinheiro,Carlos,Dra. Mariane Pacheco
+2026-08-29,V0038,CEL-001,1,1499.0,0.0,Dinheiro,Carlos,Maria Cecília Câmara
+2026-08-29,V0039,ACE-002,2,29.9,0.0,Pix,Maria,Thomas Monteiro
+2026-08-29,V0039,CEL-003,1,999.0,34.94,Pix,Maria,Thomas Monteiro
+2026-08-29,V0040,PERF-004,1,349.9,0.0,Dinheiro,Carlos,Benicio Camargo
+2026-08-31,V0041,CEL-006,1,799.0,53.73,Cartão de crédito,Carlos,Emanuel Vieira
+2026-08-31,V0041,PERF-004,1,349.9,25.31,Cartão de crédito,Carlos,Emanuel Vieira
+2026-09-01,V0042,PERF-004,1,349.9,20.85,Pix,Carlos,Mariana Peixoto
+2026-09-01,V0043,CEL-001,1,1499.0,0.0,Dinheiro,Ana,Matheus Garcia
+2026-09-01,V0044,PERF-005,1,149.9,11.73,Pix,Maria,Nina Moura
+2026-09-02,V0045,MOTO-001,1,7490.0,0.0,Pix,Pedro,Yuri Albuquerque
+2026-09-03,V0046,MOTO-001,1,7490.0,468.33,Pix,Carlos,Bruna Rodrigues
+2026-09-03,V0047,PERF-005,1,149.9,0.0,Cartão de crédito,Carlos,Juliana Vargas
+2026-09-04,V0048,PERF-001,1,219.9,0.0,Cartão de crédito,Ana,Manuela Camargo
+2026-09-04,V0049,ACE-006,2,139.9,0.0,Cartão de débito,Carlos,Pedro Henrique Castro
+2026-09-05,V0050,XXX-999,1,149.9,0.0,Cartão de débito,Pedro,Agatha Silveira
+2026-09-05,V0051,ACE-004,3,34.9,0.0,Cartão de débito,Ana,Sra. Sarah Teixeira
+2026-09-05,V0052,CEL-004,1,1299.0,0.0,Cartão de crédito,Carlos,Thiago Caldeira
+2026-09-05,V0053,PERF-005,1,149.9,0.0,Pix,Carlos,Letícia Porto
+2026-09-07,V0054,CEL-004,1,1299.0,0.0,Cartão de débito,Maria,Fernanda Cassiano
+2026-09-08,V0055,PERF-004,1,349.9,0.0,Pix,Carlos,Sr. Vitor Hugo Vasconcelos
+2026-09-08,V0056,PERF-001,1,219.9,17.04,Cartão de crédito,Carlos,Agatha Peixoto
+2026-09-08,V0057,CEL-002,1,1999.0,0.0,Cartão de crédito,Maria,Dr. Antony Camargo
+2026-09-08,V0058,PERF-005,1,149.9,0.0,Cartão de débito,Pedro,Dr. Isaque Araújo
+2026-09-08,V0058,ACE-007,2,229.9,0.0,Cartão de débito,Pedro,Dr. Isaque Araújo
+2026-09-09,V0059,ACE-003,1,79.9,0.0,Cartão de crédito,Ana,Bruno Barros
+2026-09-10,V0060,CEL-004,1,1299.0,52.16,Pix,Ana,Sra. Ana Lívia Teixeira
+2026-09-10,V0061,CEL-002,1,1999.0,88.87,Pix,Carlos,Carolina Cardoso
+31/02/2026,V0061,CEL-006,1,799.0,0.0,Pix,Carlos,Carolina Cardoso
+2026-09-10,V0062,CEL-004,1,1299.0,0.0,Pix,Maria,Olívia Novaes
+2026-09-10,V0063,ACE-001,2,39.9,0.0,Pix,Pedro,João Moura
+2026-09-11,V0064,PERF-005,1,149.9,6.92,Cartão de crédito,Pedro,Mariana Cunha
+2026-09-11,V0065,ACE-006,2,139.9,0.0,Cartão de crédito,Pedro,Gabriela Silva
+2026-09-11,V0066,ACE-004,3,34.9,4.48,Cartão de crédito,Carlos,Murilo Rios
+2026-09-11,V0066,ACE-001,1,39.9,1.58,Cartão de crédito,Carlos,Murilo Rios
+2026-09-11,V0066,PERF-002,1,289.9,0.0,Cartão de crédito,Carlos,Murilo Rios
+2026-09-12,V0067,MOTO-002,1,10990.0,0.0,Pix,Maria,Maria Fernanda Macedo
+2026-09-12,V0068,CEL-003,1,999.0,0.0,Pix,Maria,Milena Campos
+2026-09-12,V0069,PERF-002,1,289.9,0.0,Pix,Maria,Henry Gabriel Azevedo
+2026-09-12,V0070,ACE-001,3,39.9,0.0,Dinheiro,Pedro,Sr. Yuri da Conceição
+2026-09-13,V0071,ACE-006,3,139.9,0.0,Pix,Carlos,Hellena Abreu
+2026-09-15,V0072,ACE-006,2,139.9,17.19,Pix,Carlos,Bento da Conceição
+2026-09-15,V0073,CEL-003,1,999.0,0.0,Cartão de crédito,Maria,Arthur Gabriel Farias
+2026-09-15,V0074,CEL-005,1,3299.0,194.15,Pix,Ana,Théo da Costa
+2026-09-15,V0075,ACE-004,1,34.9,0.0,Pix,Ana,Ryan Cunha
+2026-09-16,V0076,ACE-006,3,139.9,0.0,Dinheiro,Ana,Caroline Silveira
+2026-09-16,V0077,PERF-004,1,349.9,0.0,Pix,Carlos,Olívia da Cruz
+2026-09-16,V0077,ACE-006,3,139.9,30.6,Pix,Carlos,Olívia da Cruz
+2026-09-16,V0078,ACE-005,3,149.9,0.0,Pix,Maria,Maria Luísa Correia
+2026-09-17,V0079,CEL-003,1,999.0,0.0,Pix,Ana,Calebe Ribeiro
+2026-09-17,V0080,CEL-002,1,1999.0,0.0,Cartão de crédito,Pedro,Maria Lima
+2026-09-18,V0081,ACE-007,1,229.9,0.0,Pix,Carlos,Nina Siqueira
+2026-09-18,V0082,PERF-003,1,169.9,0.0,Cartão de débito,Ana,Carlos Eduardo Araújo
+2026-09-18,V0083,ACE-006,2,139.9,17.7,Pix,Ana,Maitê Caldeira
+2026-09-19,V0084,ACE-007,3,229.9,0.0,Pix,Carlos,Gael Correia
+2026-09-19,V0085,ACE-007,3,229.9,0.0,Cartão de débito,Maria,Melissa Carvalho
+2026-09-19,V0086,ACE-003,1,79.9,6.27,Cartão de crédito,Carlos,Emilly da Mota
+2026-09-20,V0087,PERF-006,1,59.9,1.24,Cartão de crédito,Pedro,Isadora Barbosa
+2026-09-20,V0088,ACE-003,1,79.9,0.0,Dinheiro,Ana,Beatriz Aragão
+2026-09-21,V0089,CEL-004,1,1299.0,89.2,Pix,Maria,Ágatha Albuquerque
+2026-09-21,V0090,CEL-002,1,1999.0,0.0,Cartão de débito,Carlos,Isaac Cavalcante
+2026-09-21,V0090,CEL-004,1,1299.0,0.0,Cartão de débito,Carlos,Isaac Cavalcante
+2026-09-21,V0091,ACE-005,2,149.9,0.0,Pix,Maria,Raquel Mendes
+2026-09-22,V0092,XXX-999,1,1499.0,0.0,Pix,Carlos,Murilo Araújo
+2026-09-23,V0093,ACE-003,1,79.9,0.0,Pix,Ana,Mateus Abreu
+2026-09-23,V0094,PERF-003,1,169.9,0.0,Cartão de crédito,Carlos,Julia Viana
+2026-09-23,V0095,PERF-003,1,169.9,11.48,Cartão de crédito,Maria,Laura Lima
+2026-09-24,V0096,ACE-003,2,79.9,0.0,Pix,Ana,Dra. Raquel Cassiano
+2026-09-24,V0097,ACE-004,2,34.9,0.0,Cartão de crédito,Ana,Juan Cunha
+2026-09-24,V0097,CEL-001,1,1499.0,50.57,Cartão de crédito,Ana,Juan Cunha
+2026-09-24,V0098,PERF-005,1,149.9,0.0,Dinheiro,Ana,Vitor Hugo Araújo
+2026-09-24,V0099,CEL-005,1,3299.0,181.84,Cartão de crédito,Ana,Sra. Ana Laura Aragão
+2026-09-25,V0100,ACE-004,2,34.9,5.35,Pix,Pedro,Pietra Montenegro
+2026-09-25,V0100,ACE-001,1,39.9,0.0,Pix,Pedro,Pietra Montenegro
+2026-09-25,V0101,ACE-003,2,79.9,0.0,Pix,Pedro,Eduarda Araújo
+2026-09-25,V0102,CEL-005,1,3299.0,0.0,Cartão de débito,Pedro,Anna Liz Cirino
+2026-09-25,V0102,ACE-001,1,39.9,0.0,Cartão de débito,Pedro,Anna Liz Cirino
+2026-09-26,V0103,CEL-003,1,999.0,78.31,Pix,Pedro,Bernardo Rocha
+2026-09-26,V0104,CEL-002,1,1999.0,0.0,Pix,Maria,Nathan Campos
+2026-09-28,V0105,PERF-004,1,349.9,0.0,Dinheiro,Ana,Isadora Pacheco
+2026-09-28,V0105,PERF-006,1,59.9,4.2,Dinheiro,Ana,Isadora Pacheco
+2026-09-29,V0106,ACE-004,1,34.9,0.0,Cartão de crédito,Carlos,Ana Cecília Pinto
+2026-09-29,V0107,PERF-004,1,349.9,0.0,Pix,Ana,Otto Ribeiro
+2026-09-29,V0108,ACE-005,3,149.9,0.0,Dinheiro,Pedro,Stephany Dias
+2026-09-30,V0109,ACE-005,3,149.9,0.0,Pix,Ana,Gustavo Rios
+2026-09-30,V0110,CEL-004,1,1299.0,0.0,Cartão de débito,Pedro,Sra. Isabella da Luz
+2026-09-30,V0110,CEL-006,1,799.0,0.0,Cartão de débito,Pedro,Sra. Isabella da Luz
+2026-09-30,V0111,MOTO-002,1,10990.0,0.0,Cartão de débito,Ana,Caroline Rios
+2026-09-30,V0111,MOTO-001,1,7490.0,0.0,Cartão de débito,Ana,Caroline Rios
+2026-10-01,V0112,CEL-006,1,799.0,0.0,Dinheiro,Maria,Letícia Marques
+31/02/2026,V0113,ACE-006,2,139.9,0.0,Cartão de crédito,Pedro,Sr. Anthony Marques
+2026-10-01,V0113,PERF-003,1,169.9,0.0,Cartão de crédito,Pedro,Sr. Anthony Marques
+2026-10-01,V0114,ACE-005,1,149.9,0.0,Cartão de crédito,Ana,Beatriz Barbosa
+2026-10-01,V0114,ACE-002,3,29.9,0.0,Cartão de crédito,Ana,Beatriz Barbosa
+2026-10-02,V0115,PERF-006,1,59.9,0.0,Cartão de crédito,Maria,Hadassa Montenegro
+2026-10-02,V0115,XXX-999,1,349.9,14.52,Cartão de crédito,Maria,Hadassa Montenegro
+2026-10-02,V0115,CEL-003,1,999.0,0.0,Cartão de crédito,Maria,Hadassa Montenegro
+2026-10-02,V0116,ACE-006,1,139.9,0.0,Pix,Maria,Davi Lucca Ferreira
+2026-10-02,V0117,PERF-004,1,349.9,20.39,Cartão de crédito,Carlos,Joaquim Freitas
+2026-10-03,V0118,CEL-004,1,1299.0,99.65,Cartão de crédito,Carlos,Emanuel Macedo
+2026-10-03,V0119,ACE-004,3,34.9,5.69,Cartão de crédito,Maria,Liz Pimenta
+2026-10-03,V0119,CEL-003,1,999.0,0.0,Cartão de crédito,Maria,Liz Pimenta
+2026-10-03,V0119,CEL-004,1,1299.0,0.0,Cartão de crédito,Maria,Liz Pimenta
+2026-10-03,V0120,MOTO-003,1,4990.0,0.0,Pix,Maria,Vitória Albuquerque
+2026-10-03,V0121,PERF-001,1,219.9,0.0,Cartão de crédito,Pedro,Letícia Ribeiro
+2026-10-04,V0122,CEL-003,1,999.0,0.0,Pix,Carlos,Davi Luiz da Luz
+2026-10-05,V0123,PERF-006,1,59.9,2.51,Pix,Pedro,Cauê Souza
+2026-10-06,V0124,ACE-006,2,139.9,0.0,Pix,Carlos,Daniela da Mata
+2026-10-07,V0125,PERF-002,1,289.9,0.0,Pix,Pedro,Gustavo Henrique Silva
+2026-10-07,V0126,PERF-001,1,219.9,17.15,Cartão de débito,Maria,Sr. João Montenegro
+2026-10-08,V0127,PERF-003,1,169.9,0.0,Cheque,Maria,Isis Aragão
+2026-10-08,V0127,CEL-004,1,1299.0,0.0,Pix,Maria,Isis Aragão
+2026-10-08,V0128,ACE-007,3,229.9,0.0,Dinheiro,Maria,Otávio da Mota
+2026-10-08,V0129,ACE-005,2,149.9,0.0,Cartão de crédito,Carlos,Alexandre Farias
+2026-10-09,V0130,ACE-004,1,34.9,1.19,Pix,Pedro,João Castro
+2026-10-09,V0130,CEL-001,1,1499.0,0.0,Pix,Pedro,João Castro
+2026-10-09,V0131,ACE-006,3,139.9,0.0,Dinheiro,Pedro,Sra. Mariane Novais
+2026-10-09,V0132,PERF-006,1,59.9,0.0,Pix,Pedro,Daniel Barbosa
+2026-10-10,V0133,ACE-004,2,34.9,4.27,Dinheiro,Ana,Srta. Ísis Andrade
+2026-10-10,V0134,MOTO-002,1,10990.0,300.35,Pix,Ana,Sr. Pedro Cardoso
+2026-10-10,V0135,ACE-006,1,139.9,0.0,Dinheiro,Maria,Leandro Fonseca
+2026-10-10,V0135,PERF-005,1,149.9,4.13,Dinheiro,Maria,Leandro Fonseca
+2026-10-11,V0136,PERF-005,1,149.9,0.0,Pix,Carlos,Luiz Henrique Costela
+2026-10-11,V0137,PERF-005,1,149.9,0.0,Pix,Carlos,Isadora Rios
+2026-10-12,V0138,CEL-006,1,799.0,53.85,Cartão de crédito,Carlos,Luiz Gustavo Vasconcelos
+2026-10-12,V0139,ACE-002,2,29.9,0.0,Pix,Pedro,Maria Luísa Pinto
+2026-10-12,V0140,ACE-007,2,229.9,0.0,Cartão de débito,Maria,Srta. Isabela Castro
+2026-10-12,V0141,ACE-006,3,139.9,0.0,Cartão de débito,Pedro,Noah Alves
+2026-10-15,V0142,ACE-001,2,39.9,0.0,Pix,Maria,Lucas Gabriel Viana
+2026-10-15,V0142,PERF-004,1,349.9,9.65,Pix,Maria,Lucas Gabriel Viana
+2026-10-15,V0143,ACE-006,2,139.9,0.0,Pix,Ana,Isadora da Mata
+2026-10-15,V0144,CEL-006,1,799.0,0.0,Pix,Carlos,Cauê Garcia
+2026-10-16,V0145,PERF-004,1,349.9,0.0,Pix,Maria,Ravy Câmara
+2026-10-17,V0146,ACE-002,3,29.9,2.25,Cartão de crédito,Maria,Raul Ferreira
+2026-10-17,V0147,PERF-003,1,169.9,0.0,Cartão de crédito,Maria,Ian Câmara
+2026-10-17,V0148,ACE-001,2,39.9,0.0,Pix,Pedro,Gael Guerra
+2026-10-18,V0149,ACE-003,2,79.9,7.82,Pix,Carlos,Dr. Bernardo Vargas
+2026-10-18,V0150,ACE-005,2,149.9,0.0,Cartão de débito,Pedro,Luiz Fernando Ramos
+2026-10-18,V0150,CEL-003,1,999.0,0.0,Cartão de débito,Pedro,Luiz Fernando Ramos
+2026-10-19,V0151,ACE-005,3,149.9,16.37,Cartão de crédito,Ana,Maria Liz Rocha
+2026-10-19,V0152,PERF-003,1,169.9,0.0,Pix,Carlos,Luísa Alves
+2026-10-19,V0153,CEL-006,0,799.0,0.0,Dinheiro,Maria,José Pedro Cavalcanti
+2026-10-19,V0154,ACE-003,1,79.9,0.0,Pix,Ana,Julia Andrade
+2026-10-20,V0155,PERF-002,1,289.9,0.0,Pix,Maria,Pedro Henrique Ferreira
+2026-10-20,V0156,PERF-004,1,349.9,22.85,Cartão de débito,Pedro,Sra. Maya Pereira
+2026-10-20,V0157,ACE-003,3,79.9,0.0,Cartão de crédito,Pedro,Bruna Gomes
+2026-10-20,V0158,CEL-005,1,3299.0,0.0,Pix,Carlos,Esther da Cunha
+2026-10-21,V0159,ACE-001,1,39.9,1.71,Cartão de débito,Pedro,Pedro Henrique Abreu
+2026-10-22,V0160,PERF-003,1,169.9,0.0,Pix,Maria,Zoe Rodrigues
+2026-10-23,V0161,PERF-005,1,149.9,3.19,Cartão de débito,Ana,Dra. Fernanda Fonseca
+2026-10-23,V0161,ACE-004,3,34.9,0.0,Cartão de débito,Ana,Dra. Fernanda Fonseca
+2026-10-23,V0162,ACE-007,3,229.9,38.16,Pix,Maria,Ana Lívia Rios
+2026-10-23,V0162,PERF-001,1,219.9,0.0,Pix,Maria,Ana Lívia Rios
+2026-10-23,V0163,ACE-003,1,79.9,4.63,Cheque,Carlos,Dr. Davi Silveira
+2026-10-24,V0164,PERF-003,1,169.9,4.89,Pix,Carlos,Thiago das Neves
+2026-10-24,V0165,ACE-007,3,229.9,0.0,Pix,Pedro,Maria Luísa Duarte
+2026-10-24,V0166,ACE-006,3,139.9,0.0,Cartão de débito,Ana,Laís Novaes
+2026-10-24,V0167,CEL-001,1,1499.0,0.0,Cartão de débito,Ana,Gael Leão
+2026-10-24,V0168,ACE-001,2,39.9,5.58,Cartão de débito,Maria,Maria Helena Rocha
+2026-10-27,V0169,ACE-005,3,149.9,0.0,Dinheiro,Maria,Srta. Liz Guerra
+2026-10-27,V0170,PERF-003,1,169.9,12.56,Dinheiro,Pedro,Agatha da Rosa
+2026-10-27,V0170,ACE-005,1,149.9,0.0,Dinheiro,Pedro,Agatha da Rosa
+2026-10-27,V0171,ACE-002,1,29.9,0.0,Pix,Pedro,Gustavo Henrique Lopes
+2026-10-27,V0172,ACE-003,2,79.9,0.0,Cartão de crédito,Pedro,Luna Martins
+2026-10-28,V0173,CEL-006,1,799.0,0.0,Cartão de débito,Maria,Melina Rocha
+2026-10-28,V0174,ACE-003,3,79.9,0.0,Cartão de crédito,Carlos,Thomas Melo
+2026-10-29,V0175,PERF-003,1,169.9,10.62,Dinheiro,Pedro,Srta. Antonella da Paz
+2026-10-29,V0176,ACE-006,2,139.9,0.0,Cartão de crédito,Maria,Lívia Borges
+2026-10-29,V0177,ACE-003,2,79.9,0.0,Pix,Carlos,Leonardo Câmara
+2026-10-29,V0178,CEL-002,1,1999.0,0.0,Pix,Ana,Diogo Alves
+2026-10-31,V0179,PERF-005,1,149.9,0.0,Pix,Ana,Joaquim Melo
+2026-10-31,V0180,ACE-002,1,29.9,0.0,Pix,Carlos,Ana Sophia Marques
+2026-10-31,V0181,ACE-006,1,139.9,0.0,Dinheiro,Ana,Evelyn Silva
+2026-10-31,V0182,CEL-002,1,1999.0,0.0,Pix,Pedro,Sra. Sabrina Guerra
+2026-10-31,V0183,PERF-005,1,149.9,0.0,Dinheiro,Pedro,Diogo Rezende
+2026-11-01,V0184,MOTO-001,1,7490.0,0.0,Cartão de crédito,Carlos,Srta. Bianca Vasconcelos
+2026-11-01,V0185,ACE-003,3,79.9,15.77,Dinheiro,Maria,Hellena Cavalcanti
+2026-11-02,V0186,ACE-007,2,229.9,0.0,Pix,Carlos,Dra. Nicole Aragão
+2026-11-02,V0187,PERF-004,1,349.9,0.0,Pix,Pedro,Isadora Campos
+2026-11-02,V0187,CEL-005,1,3299.0,0.0,Pix,Pedro,Isadora Campos
+2026-11-04,V0188,PERF-006,1,59.9,0.0,Pix,Pedro,Catarina Martins
+2026-11-04,V0188,ACE-002,1,29.9,1.86,Pix,Pedro,Catarina Martins
+2026-11-04,V0189,CEL-001,1,1499.0,0.0,Pix,Carlos,Vitória Novais

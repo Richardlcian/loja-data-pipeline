@@ -8,7 +8,6 @@ CEL-006,Smartphone Gama Lite 64GB,Celular,Gama,480.0,799.0
 MOTO-001,Moto elétrica Volt 800W,Moto elétrica,Volt,5200.0,7490.0
 MOTO-002,Moto elétrica Volt 1500W,Moto elétrica,Volt,7800.0,10990.0
 MOTO-003,Scooter elétrica Zip 500W,Moto elétrica,Zip,3400.0,4990.0
-BIKE-001,Bicicleta elétrica Eco 350W,Bicicleta elétrica,Eco,2600.0,3790.0
 ACE-001,Capa protetora,Acessório,Genérica,8.0,39.9
 ACE-002,Película de vidro,Acessório,Genérica,5.0,29.9
 ACE-003,Carregador 20W,Acessório,Alfa,25.0,79.9
@@ -16,5 +15,9 @@ ACE-004,Cabo USB-C 1m,Acessório,Genérica,9.0,34.9
 ACE-005,Fone Bluetooth,Acessório,Beta,55.0,149.9
 ACE-006,Power bank 10000mAh,Acessório,Gama,60.0,139.9
 ACE-007,Capacete para moto elétrica,Acessório,Volt,90.0,229.9
-PEC-001,Bateria para moto elétrica 48V,Peça,Volt,1100.0,1690.0
-PEC-002,Carregador moto elétrica 48V,Peça,Volt,220.0,389.0
+PERF-001,Perfume Aurora 100ml,Perfume,Aurora,95.0,219.9
+PERF-002,Perfume Noir Intenso 100ml,Perfume,Noir,120.0,289.9
+PERF-003,Perfume Brisa Feminino 50ml,Perfume,Brisa,70.0,169.9
+PERF-004,Perfume Oud Masculino 100ml,Perfume,Oud,150.0,349.9
+PERF-005,Kit Perfume Mini 3x30ml,Perfume,Aurora,60.0,149.9
+PERF-006,Body Splash Floral 200ml,Perfume,Brisa,22.0,59.9
