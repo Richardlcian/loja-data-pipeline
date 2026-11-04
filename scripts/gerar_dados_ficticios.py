@@ -1,6 +1,7 @@
 """
-Gera dados fictícios de uma loja (celulares, motos elétricas e acessórios)
+Gera dados fictícios de uma loja (celulares, motos elétricas, acessórios e perfumes)
 nos mesmos formatos das abas da planilha: produtos, vendas e compras.
+Volume padrão: ~2 vendas por dia, como o esperado na loja no início.
 
 Uso (na raiz do projeto, com o .venv ativo):
     python scripts/gerar_dados_ficticios.py
@@ -20,8 +21,8 @@ from faker import Faker
 PASTA_SAIDA = Path(__file__).resolve().parent.parent / "data" / "sample"
 
 # Precisam ser idênticas às de config/settings.py (FORMAS_PAGAMENTO)
-PAGAMENTOS = ["Pix", "Débito", "Crédito à vista", "Crédito parcelado", "Dinheiro", "Boleto"]
-PESO_PAGAMENTOS = [40, 15, 15, 22, 6, 2]
+PAGAMENTOS = ["Pix", "Cartão de débito", "Cartão de crédito", "Dinheiro"]
+PESO_PAGAMENTOS = [45, 20, 28, 7]
 
 VENDEDORES = ["Maria", "Carlos", "Ana", "Pedro"]
 
@@ -36,7 +37,6 @@ PRODUTOS = [
     ("MOTO-001", "Moto elétrica Volt 800W", "Moto elétrica", "Volt", 5200.00, 7490.00),
     ("MOTO-002", "Moto elétrica Volt 1500W", "Moto elétrica", "Volt", 7800.00, 10990.00),
     ("MOTO-003", "Scooter elétrica Zip 500W", "Moto elétrica", "Zip", 3400.00, 4990.00),
-    ("BIKE-001", "Bicicleta elétrica Eco 350W", "Bicicleta elétrica", "Eco", 2600.00, 3790.00),
     ("ACE-001", "Capa protetora", "Acessório", "Genérica", 8.00, 39.90),
     ("ACE-002", "Película de vidro", "Acessório", "Genérica", 5.00, 29.90),
     ("ACE-003", "Carregador 20W", "Acessório", "Alfa", 25.00, 79.90),
@@ -44,28 +44,30 @@ PRODUTOS = [
     ("ACE-005", "Fone Bluetooth", "Acessório", "Beta", 55.00, 149.90),
     ("ACE-006", "Power bank 10000mAh", "Acessório", "Gama", 60.00, 139.90),
     ("ACE-007", "Capacete para moto elétrica", "Acessório", "Volt", 90.00, 229.90),
-    ("PEC-001", "Bateria para moto elétrica 48V", "Peça", "Volt", 1100.00, 1690.00),
-    ("PEC-002", "Carregador moto elétrica 48V", "Peça", "Volt", 220.00, 389.00),
+    ("PERF-001", "Perfume Aurora 100ml", "Perfume", "Aurora", 95.00, 219.90),
+    ("PERF-002", "Perfume Noir Intenso 100ml", "Perfume", "Noir", 120.00, 289.90),
+    ("PERF-003", "Perfume Brisa Feminino 50ml", "Perfume", "Brisa", 70.00, 169.90),
+    ("PERF-004", "Perfume Oud Masculino 100ml", "Perfume", "Oud", 150.00, 349.90),
+    ("PERF-005", "Kit Perfume Mini 3x30ml", "Perfume", "Aurora", 60.00, 149.90),
+    ("PERF-006", "Body Splash Floral 200ml", "Perfume", "Brisa", 22.00, 59.90),
 ]
 
-ESTOQUE_INICIAL = {"Celular": 15, "Moto elétrica": 4, "Bicicleta elétrica": 3, "Acessório": 60, "Peça": 8}
+ESTOQUE_INICIAL = {"Celular": 8, "Moto elétrica": 3, "Acessório": 40, "Perfume": 20}
 # categoria: (repor quando estoque < limite, quantidade a repor)
 REPOSICAO = {
-    "Celular": (4, 12),
-    "Moto elétrica": (2, 4),
-    "Bicicleta elétrica": (1, 3),
-    "Acessório": (15, 50),
-    "Peça": (2, 6),
+    "Celular": (3, 8),
+    "Moto elétrica": (1, 3),
+    "Acessório": (10, 40),
+    "Perfume": (5, 15),
 }
 FORNECEDORES = {
     "Celular": "Distribuidora Tech Sul",
     "Moto elétrica": "Mobilidade Verde Ltda",
-    "Bicicleta elétrica": "Mobilidade Verde Ltda",
     "Acessório": "Atacado Acessórios RJ",
-    "Peça": "Mobilidade Verde Ltda",
+    "Perfume": "Perfumaria Atacado Rio",
 }
 # peso de cada categoria na escolha dos itens vendidos
-PESO_CATEGORIAS = {"Celular": 30, "Acessório": 45, "Moto elétrica": 5, "Bicicleta elétrica": 3, "Peça": 4}
+PESO_CATEGORIAS = {"Celular": 28, "Acessório": 35, "Perfume": 32, "Moto elétrica": 5}
 
 
 def simular(dias: int):
@@ -113,10 +115,10 @@ def simular(dias: int):
                 if estoque[p["sku"]] < limite:
                     comprar(dia, p, qtd)
 
-        # sábado vende mais, domingo menos
-        faixa = {5: (5, 10), 6: (1, 3)}.get(dia.weekday(), (2, 6))
+        # média de ~2 vendas por dia: sábado vende mais, domingo menos
+        faixa = {5: (1, 5), 6: (0, 2)}.get(dia.weekday(), (0, 4))
         for _ in range(random.randint(*faixa)):
-            n_itens = random.choices([1, 2, 3], weights=[75, 20, 5])[0]
+            n_itens = random.choices([1, 2, 3], weights=[80, 17, 3])[0]
             itens, usados = [], set()
             for _ in range(n_itens):
                 categoria = random.choices(categorias, weights=pesos)[0]
@@ -154,22 +156,22 @@ def simular(dias: int):
                 })
 
     df_produtos = pd.DataFrame(
-        [(s, n, c, m, custo, preco) for s, n, c, m, custo, preco in PRODUTOS],
+        PRODUTOS,
         columns=["sku", "nome", "categoria", "marca", "custo_unitario", "preco_tabela"],
     )
     return df_produtos, pd.DataFrame(vendas), pd.DataFrame(compras)
 
 
-def injetar_erros(vendas: pd.DataFrame, fracao: float = 0.03) -> pd.DataFrame:
+def injetar_erros(vendas: pd.DataFrame, fracao: float = 0.04) -> pd.DataFrame:
     """Corrompe algumas linhas para testar as regras de validação do pipeline."""
     vendas = vendas.copy()
     n = max(4, int(len(vendas) * fracao))
     for k, idx in enumerate(random.sample(list(vendas.index), n)):
         tipo = k % 4
         if tipo == 0:
-            vendas.loc[idx, "sku"] = "XXX-999"            # SKU inexistente
+            vendas.loc[idx, "sku"] = "XXX-999"             # SKU inexistente
         elif tipo == 1:
-            vendas.loc[idx, "quantidade"] = 0             # quantidade inválida
+            vendas.loc[idx, "quantidade"] = 0              # quantidade inválida
         elif tipo == 2:
             vendas.loc[idx, "forma_pagamento"] = "Cheque"  # pagamento fora da lista
         else:
