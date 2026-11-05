@@ -180,7 +180,7 @@ Resumo das classes: 8 produtos na classe A (82% da receita), 6 na B (cerca de 13
 
 Painel interativo em Streamlit com indicadores comparados ao período anterior, evolução de vendas, curva ABC, alertas de estoque e análise por forma de pagamento e vendedor.
 
-![Visão geral](visao_geral.png)
+![Visão geral](docs/dashboard_visao_geral.png)
 
 Para abrir: `streamlit run dashboards/app.py`
 
