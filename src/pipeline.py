@@ -1,12 +1,13 @@
 """Orquestra o ETL: extrair -> normalizar -> validar -> calcular -> carregar.
 Execute na raiz do projeto:  python -m src.pipeline"""
-import logging 
+import logging
+from datetime import datetime
 from logging.handlers import RotatingFileHandler
 
 import pandas as pd
 
 from config import settings
-from src import extract, load, transform, validate
+from src import checks, extract, load, notificar, transform, validate
 
 log = logging.getLogger("pipeline")
 
@@ -53,6 +54,7 @@ def executar(dados: dict, con) -> dict:
     return {
         "vendas_carregadas": len(vendas),
         "compras_carregadas": len(compras),
+        "carregadas": {"produtos": len(produtos), "vendas": len(vendas), "compras": len(compras)},
         "faturamento": soma_calc,
         "rejeitadas": {
             "produtos": _rejeitadas_originais(dados["produtos"], prod_rej),
@@ -73,28 +75,58 @@ def salvar_rejeitadas(rejeitadas: dict) -> None:
             arquivo.unlink()  # evita ler um arquivo antigo de uma execução anterior
 
 
+def registrar_alertas(alertas: list[str]) -> None:
+    """Grava os alertas em logs/ALERTAS.txt (apaga o arquivo se não há alertas) e avisa por e-mail."""
+    arquivo = settings.LOGS_DIR / "ALERTAS.txt"
+    if not alertas:
+        arquivo.unlink(missing_ok=True)
+        log.info("Verificações de qualidade: nenhum alerta")
+        return
+    texto = "\n".join(f"- {a}" for a in alertas)
+    for a in alertas:
+        log.warning("ALERTA: %s", a)
+    arquivo.write_text(f"Alertas de {datetime.now():%d/%m/%Y %H:%M}\n\n{texto}\n", encoding="utf-8")
+    notificar.enviar_email("[Loja] Alertas nos dados", texto)
+
+
+def rodar() -> None:
+    dados = extract.extrair_tudo()
+    if not settings.USE_SAMPLE:
+        extract.salvar_snapshot(dados)
+
+    con = load.conectar()
+    try:
+        resultado = executar(dados, con)
+        alertas = checks.verificar(con, resultado, verificar_frescor=not settings.USE_SAMPLE)
+    finally:
+        con.close()
+
+    salvar_rejeitadas(resultado["rejeitadas"])
+    registrar_alertas(alertas)
+    log.info("Pipeline finalizado: %d vendas, %d compras, faturamento R$ %.2f",
+             resultado["vendas_carregadas"], resultado["compras_carregadas"], resultado["faturamento"])
+
+
 def main() -> None:
     settings.LOGS_DIR.mkdir(exist_ok=True)
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
         handlers=[RotatingFileHandler(settings.LOGS_DIR / "pipeline.log", maxBytes=1_000_000,
-                       backupCount=5, encoding="utf-8"),
+                                      backupCount=5, encoding="utf-8"),
                   logging.StreamHandler()],
     )
     modo = "dados fictícios" if settings.USE_SAMPLE else "planilha real"
     log.info("Início do pipeline (%s)", modo)
-
-    dados = extract.extrair_tudo()
-    con = load.conectar()
     try:
-        resultado = executar(dados, con)
-    finally:
-        con.close()
-
-    salvar_rejeitadas(resultado["rejeitadas"])
-    log.info("Pipeline finalizado: %d vendas, %d compras, faturamento R$ %.2f",
-             resultado["vendas_carregadas"], resultado["compras_carregadas"], resultado["faturamento"])
+        rodar()
+    except Exception as erro:
+        log.exception("Pipeline falhou")
+        notificar.enviar_email(
+            "[Loja] Pipeline FALHOU",
+            f"O pipeline falhou em {datetime.now():%d/%m/%Y %H:%M}.\n\nErro: {erro!r}\n\n"
+            "Veja logs/pipeline.log para os detalhes.")
+        raise
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 @echo off
-rem Executa o pipeline da loja e registra o resultado em logs\agendador.log.
+rem Executa o pipeline da loja, faz o backup e registra o resultado em logs\agendador.log.
 rem Pode ser rodado com duplo clique ou agendado no Agendador de Tarefas do Windows.
 setlocal
 cd /d "%~dp0.."
@@ -21,5 +21,6 @@ if %CODIGO% neq 0 (
 ) else (
     echo [%date% %time%] Concluido com sucesso >> logs\agendador.log
     if exist logs\ULTIMA_FALHA.txt del logs\ULTIMA_FALHA.txt
+    "%PY%" scripts\backup.py >> logs\agendador.log 2>&1
 )
 exit /b %CODIGO%

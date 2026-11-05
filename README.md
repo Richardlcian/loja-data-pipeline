@@ -1,8 +1,9 @@
 # Loja Data Pipeline
+![CI](https://github.com/Richardlcian/loja-data-pipeline/actions/workflows/ci.yml/badge.svg)
 
 Pipeline de dados de vendas e estoque para uma loja física de celulares, motos elétricas, acessórios e perfumes. Coleta os registros da loja em uma planilha, valida e transforma os dados em Python, carrega em um banco com modelo dimensional e responde perguntas de negócio com SQL.
 
-**Status:** em desenvolvimento (fases 0 a 7 concluídas; dashboard em andamento).
+**Status:** em desenvolvimento (fases 0 a 8 concluídas; dashboard em andamento).
 
 ## Contexto de negócio
 
@@ -188,6 +189,12 @@ Para abrir: `streamlit run dashboards/app.py`
 
 O pipeline roda todos os dias às 06:30 pelo Agendador de Tarefas do Windows, via `scripts/executar_pipeline.bat`. O script registra o resultado em `logs/agendador.log` e cria `logs/ULTIMA_FALHA.txt` quando uma execução falha. Se o computador estiver desligado no horário, a tarefa roda assim que ele for ligado.
 
+## Observabilidade
+
+- **Alertas:** verificações após cada carga (linhas rejeitadas, dados parados, estoque negativo, venda abaixo do custo), registradas em `logs/ALERTAS.txt` e, opcionalmente, enviadas por e-mail.
+- **Backup:** cópia diária do banco (14 dias) e da planilha bruta (30 dias), com cópia opcional em nuvem.
+- **CI:** testes, pipeline completo e consultas SQL rodam no GitHub Actions a cada push.
+
 ### Cuidados ao interpretar
 
 - Com poucas vendas por dia, a variação semanal oscila muito; a média móvel (consulta 10) e períodos mais longos dão uma leitura mais estável.
@@ -208,7 +215,7 @@ O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais
 - [x] Fase 5: consultas SQL de análise
 - [x] Fase 6: dashboard
 - [x] Fase 7: execução automática diária
-- [ ] Fase 8: observabilidade (alertas, backup, CI)
+- [x] Fase 8: observabilidade (alertas, backup, CI)
 
 **Evoluções planejadas:** garantia por produto, tabela de assistência técnica, calendário de datas sazonais para comparar promoções, PostgreSQL, carga incremental e dbt.
 

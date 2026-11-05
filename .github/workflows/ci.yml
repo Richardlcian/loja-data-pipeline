@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install pandas python-dotenv pytest faker
+
+      - name: Rodar os testes
+        run: pytest
+
+      - name: Pipeline completo com dados fictícios (inclui linhas inválidas de propósito)
+        run: |
+          python scripts/gerar_dados_ficticios.py --com-erros
+          python -m src.pipeline
+
+      - name: Rodar as 14 consultas de análise
+        run: |
+          for i in $(seq 1 14); do
+            python scripts/rodar_consulta.py "$i" > /dev/null
+          done

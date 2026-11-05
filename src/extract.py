@@ -1,4 +1,6 @@
 import logging
+from datetime import date
+from pathlib import Path
 
 import pandas as pd
 
@@ -34,3 +36,14 @@ def extrair_aba(nome: str) -> pd.DataFrame:
 
 def extrair_tudo() -> dict[str, pd.DataFrame]:
     return {nome: extrair_aba(nome) for nome in settings.ABAS}
+
+
+def salvar_snapshot(dados: dict[str, pd.DataFrame], hoje: date | None = None) -> Path:
+    """Guarda uma cópia bruta da planilha do dia em data/raw/AAAA-MM-DD/.
+    Se alguém apagar ou alterar algo na planilha, dá para recuperar o que havia antes."""
+    pasta = settings.BASE_DIR / "data" / "raw" / (hoje or date.today()).isoformat()
+    pasta.mkdir(parents=True, exist_ok=True)
+    for nome, df in dados.items():
+        df.to_csv(pasta / f"{nome}.csv", index=False, encoding="utf-8")
+    log.info("Snapshot da planilha salvo em %s", pasta)
+    return pasta
