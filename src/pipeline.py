@@ -1,6 +1,7 @@
 """Orquestra o ETL: extrair -> normalizar -> validar -> calcular -> carregar.
 Execute na raiz do projeto:  python -m src.pipeline"""
-import logging
+import logging 
+from logging.handlers import RotatingFileHandler
 
 import pandas as pd
 
@@ -77,7 +78,8 @@ def main() -> None:
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-        handlers=[logging.FileHandler(settings.LOGS_DIR / "pipeline.log", encoding="utf-8"),
+        handlers=[RotatingFileHandler(settings.LOGS_DIR / "pipeline.log", maxBytes=1_000_000,
+                       backupCount=5, encoding="utf-8"),
                   logging.StreamHandler()],
     )
     modo = "dados fictícios" if settings.USE_SAMPLE else "planilha real"

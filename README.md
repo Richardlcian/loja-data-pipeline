@@ -2,7 +2,7 @@
 
 Pipeline de dados de vendas e estoque para uma loja física de celulares, motos elétricas, acessórios e perfumes. Coleta os registros da loja em uma planilha, valida e transforma os dados em Python, carrega em um banco com modelo dimensional e responde perguntas de negócio com SQL.
 
-**Status:** em desenvolvimento (fases 0 a 6 concluídas; dashboard em andamento).
+**Status:** em desenvolvimento (fases 0 a 7 concluídas; dashboard em andamento).
 
 ## Contexto de negócio
 
@@ -184,6 +184,10 @@ Painel interativo em Streamlit com indicadores comparados ao período anterior, 
 
 Para abrir: `streamlit run dashboards/app.py`
 
+## Automação
+
+O pipeline roda todos os dias às 06:30 pelo Agendador de Tarefas do Windows, via `scripts/executar_pipeline.bat`. O script registra o resultado em `logs/agendador.log` e cria `logs/ULTIMA_FALHA.txt` quando uma execução falha. Se o computador estiver desligado no horário, a tarefa roda assim que ele for ligado.
+
 ### Cuidados ao interpretar
 
 - Com poucas vendas por dia, a variação semanal oscila muito; a média móvel (consulta 10) e períodos mais longos dão uma leitura mais estável.
@@ -203,7 +207,7 @@ O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais
 - [x] Fase 4: pipeline ETL com validação e testes
 - [x] Fase 5: consultas SQL de análise
 - [x] Fase 6: dashboard
-- [ ] Fase 7: execução automática diária
+- [x] Fase 7: execução automática diária
 - [ ] Fase 8: observabilidade (alertas, backup, CI)
 
 **Evoluções planejadas:** garantia por produto, tabela de assistência técnica, calendário de datas sazonais para comparar promoções, PostgreSQL, carga incremental e dbt.
