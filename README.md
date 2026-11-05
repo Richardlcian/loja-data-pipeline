@@ -2,7 +2,7 @@
 
 Pipeline de dados de vendas e estoque para uma loja física de celulares, motos elétricas, acessórios e perfumes. Coleta os registros da loja em uma planilha, valida e transforma os dados em Python, carrega em um banco com modelo dimensional e responde perguntas de negócio com SQL.
 
-**Status:** em desenvolvimento (fases 0 a 5 concluídas; dashboard em andamento).
+**Status:** em desenvolvimento (fases 0 a 6 concluídas; dashboard em andamento).
 
 ## Contexto de negócio
 
@@ -35,6 +35,10 @@ Python 3.11+, pandas, SQL (SQLite), pytest, Git/GitHub. Dashboard (Metabase ou S
 
 ```
 loja-data-pipeline/
+├──dashboards
+|   ├──_init_.py
+|   ├──app.py
+|   ├──dados.py
 ├── config/settings.py          # caminhos, abas da planilha, formas de pagamento
 ├── src/
 │   ├── extract.py              # lê as abas (planilha ou CSVs de exemplo)
@@ -172,6 +176,14 @@ Resumo das classes: 8 produtos na classe A (82% da receita), 6 na B (cerca de 13
 
 **O que os números mostram:** celulares e motos elétricas somam cerca de 85% do faturamento, mas as motos têm a menor margem (28,6%). Acessórios e perfumes vendem muitas unidades (237 juntas) e têm margem de 57% a 63%, porém pesam pouco no faturamento (cerca de 15%). Na curva ABC, 8 dos 22 produtos (3 motos e 5 celulares) formam a classe A, e só a moto Volt 1500W responde por 20% da receita. Os 8 produtos da classe C somam menos de 5%. Como os dados são fictícios, os valores ilustram o método; com dados reais, essa leitura ajuda a decidir o que comprar, o que promover e o que repensar no estoque.
 
+## Dashboard
+
+Painel interativo em Streamlit com indicadores comparados ao período anterior, evolução de vendas, curva ABC, alertas de estoque e análise por forma de pagamento e vendedor.
+
+![Visão geral](visao_geral.png)
+
+Para abrir: `streamlit run dashboards/app.py`
+
 ### Cuidados ao interpretar
 
 - Com poucas vendas por dia, a variação semanal oscila muito; a média móvel (consulta 10) e períodos mais longos dão uma leitura mais estável.
@@ -190,7 +202,7 @@ O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais
 - [x] Fase 3: modelo de dados no SQLite
 - [x] Fase 4: pipeline ETL com validação e testes
 - [x] Fase 5: consultas SQL de análise
-- [ ] Fase 6: dashboard
+- [x] Fase 6: dashboard
 - [ ] Fase 7: execução automática diária
 - [ ] Fase 8: observabilidade (alertas, backup, CI)
 
