@@ -1,13 +1,16 @@
 # Loja Data Pipeline
+
 ![CI](https://github.com/Richardlcian/loja-data-pipeline/actions/workflows/ci.yml/badge.svg)
 
-Pipeline de dados de vendas e estoque para uma loja física de celulares, motos elétricas, acessórios e perfumes. Coleta os registros da loja em uma planilha, valida e transforma os dados em Python, carrega em um banco com modelo dimensional e responde perguntas de negócio com SQL.
+Pipeline de dados de ponta a ponta para uma loja física de celulares, motos elétricas, acessórios e perfumes: coleta os registros da loja em uma planilha, valida e transforma em Python, carrega em um banco com modelo dimensional, executa todo dia sozinho, avisa quando algo está errado e entrega um dashboard para o dono decidir com dados.
 
-**Status:** em desenvolvimento (fases 0 a 8 concluídas; dashboard em andamento).
+> O repositório contém apenas **dados fictícios**. Os dados reais da loja nunca são versionados.
+
+![Visão geral do dashboard](docs/dashboard_visao_geral.png)
 
 ## Contexto de negócio
 
-Projeto desenvolvido para a loja do meu irmão, em fase de inauguração, e usado como projeto de portfólio em engenharia de dados.
+Projeto desenvolvido para uma loja física real, em fase de inauguração, e usado como projeto de portfólio em engenharia de dados.
 
 - **Produtos:** celulares, motos elétricas, acessórios e perfumes
 - **Registro hoje:** planilha e WhatsApp
@@ -16,47 +19,86 @@ Projeto desenvolvido para a loja do meu irmão, em fase de inauguração, e usad
 - **Volume inicial estimado:** cerca de 2 vendas por dia, com ações sazonais planejadas
 - **Objetivo:** acompanhar o funcionamento da loja com dados para decidir o que comprar, o que promover e onde ajustar
 
+## Destaques
+
+- **Modelo dimensional** (esquema estrela) com custo gravado no momento da venda
+- **Validação de dados** com 9 regras para vendas; linhas inválidas são isoladas em arquivo, sem derrubar o pipeline
+- **Carga idempotente** com transação e reconciliação de totais
+- **14 consultas SQL** de negócio, incluindo funções de janela e curva ABC
+- **Dashboard** em Streamlit com KPIs comparados ao período anterior
+- **Operação:** execução diária agendada, alertas de qualidade (e-mail opcional), backup e cópia diária da planilha
+- **33 testes automatizados** rodando no GitHub Actions, junto com o pipeline completo e as consultas SQL
+
+## Dashboard
+
+Painel em Streamlit (`streamlit run dashboards/app.py`) com filtros por período, categoria e agrupamento (dia, semana ou mês). Os indicadores do topo são comparados ao período anterior de mesmo tamanho. As telas abaixo usam dados fictícios.
+
+**Visão geral:** faturamento, lucro, margem, vendas e ticket médio, evolução no tempo e vendas por dia da semana.
+
+![Visão geral](docs/dashboard_visao_geral.png)
+
+**Produtos:** faturamento e margem por categoria, os 10 produtos que mais faturam e a curva ABC.
+
+![Produtos](docs/dashboard_produtos.png)
+
+**Estoque:** alertas de estoque baixo e de produtos parados, com limites ajustáveis.
+
+![Estoque](docs/dashboard_estoque.png)
+
+**Pagamentos e equipe:** participação de Pix, débito, crédito e dinheiro, e desempenho dos vendedores.
+
+![Pagamentos e equipe](docs/dashboard_pagamentos_equipe.png)
+
 ## Arquitetura
 
 ```mermaid
 flowchart LR
     A[Google Sheets<br/>produtos, vendas, compras] --> B[Extração<br/>pandas]
+    B --> S[(Snapshot diário<br/>data/raw)]
     B --> C[Normalização<br/>e validação]
     C -->|linhas inválidas| D[(rejeitadas_*.csv)]
     C --> E[Carga<br/>SQLite]
-    E --> F[Consultas SQL<br/>de análise]
-    E -.-> G[Dashboard<br/>em desenvolvimento]
+    E --> K[Verificações<br/>de qualidade]
+    K -->|alertas| L[ALERTAS.txt<br/>e e-mail]
+    E --> F[Consultas SQL]
+    E --> G[Dashboard<br/>Streamlit]
+    E --> H[(Backup diário)]
+    T[Agendador de Tarefas<br/>todo dia 06:30] -.-> B
 ```
 
 ## Stack
 
-Python 3.11+, pandas, SQL (SQLite), pytest, Git/GitHub. Dashboard (Metabase ou Streamlit) e agendamento da execução nas próximas fases.
+Python 3.12+, pandas, SQL (SQLite), Streamlit, pytest, GitHub Actions, Agendador de Tarefas do Windows.
 
 ## Estrutura do projeto
 
 ```
 loja-data-pipeline/
-├──dashboards
-|   ├──_init_.py
-|   ├──app.py
-|   ├──dados.py
-├── config/settings.py          # caminhos, abas da planilha, formas de pagamento
+├── config/settings.py            # caminhos, abas da planilha, formas de pagamento
 ├── src/
-│   ├── extract.py              # lê as abas (planilha ou CSVs de exemplo)
-│   ├── transform.py            # limpeza e padronização
-│   ├── validate.py             # regras de qualidade de dados
-│   ├── load.py                 # carga no SQLite
-│   └── pipeline.py             # orquestra o ETL
+│   ├── extract.py                # lê as abas (planilha ou CSVs) e guarda snapshot
+│   ├── transform.py              # limpeza e padronização
+│   ├── validate.py               # regras de qualidade de dados
+│   ├── load.py                   # carga no SQLite
+│   ├── checks.py                 # alertas após a carga
+│   ├── notificar.py              # e-mail opcional
+│   └── pipeline.py               # orquestra o ETL
 ├── sql/
-│   ├── 01_create_tables.sql    # modelo dimensional
-│   ├── 02_views.sql            # estoque atual e vendas diárias
-│   └── 03_analises.sql         # 14 consultas de negócio
+│   ├── 01_create_tables.sql      # modelo dimensional
+│   ├── 02_views.sql              # estoque atual e vendas diárias
+│   └── 03_analises.sql           # 14 consultas de negócio
+├── dashboards/
+│   ├── dados.py                  # cálculo das métricas (testável)
+│   └── app.py                    # interface Streamlit
 ├── scripts/
 │   ├── gerar_dados_ficticios.py
-│   └── rodar_consulta.py       # executa as consultas pelo terminal
-├── tests/                      # testes de transformação, validação e carga
-├── data/sample/                # dados fictícios (únicos versionados)
-└── docs/modelo_de_dados.png
+│   ├── rodar_consulta.py         # executa as consultas pelo terminal
+│   ├── backup.py
+│   └── executar_pipeline.bat     # usado pelo Agendador de Tarefas
+├── tests/                        # 33 testes
+├── .github/workflows/ci.yml      # integração contínua
+├── data/sample/                  # dados fictícios (únicos versionados)
+└── docs/                         # diagrama do modelo e prints do painel
 ```
 
 ## Modelo de dados
@@ -64,8 +106,6 @@ loja-data-pipeline/
 ![Modelo de dados](docs/modelo_de_dados.png)
 
 Esquema estrela com `fato_vendas` e `fato_compras` ao centro, cercadas pelas dimensões `dim_produto`, `dim_tempo`, `dim_vendedor` e `dim_cliente`.
-
-Decisões de modelagem:
 
 - **Granularidade:** uma linha de `fato_vendas` por item vendido (uma venda com dois itens gera duas linhas com o mesmo `id_venda`).
 - **Custo no momento da venda:** `custo_total` é gravado na venda, então a margem histórica não muda quando o custo do produto muda.
@@ -85,29 +125,29 @@ pip install -r requirements.txt
 cp .env.example .env               # mantenha USE_SAMPLE=true para usar dados fictícios
 python scripts/gerar_dados_ficticios.py
 python -m src.pipeline
+streamlit run dashboards/app.py    # abre o painel em http://localhost:8501
 ```
 
 Com `USE_SAMPLE=true` o pipeline lê os CSVs de `data/sample/`. Com `USE_SAMPLE=false` ele lê a planilha indicada em `SHEET_ID` (compartilhada como "qualquer pessoa com o link pode ver").
 
-Para rodar as análises:
+Outros comandos:
 
 ```bash
-python scripts/rodar_consulta.py          # lista as consultas
-python scripts/rodar_consulta.py 12       # roda a consulta 12 (curva ABC)
-python scripts/rodar_consulta.py 12 --csv # também salva em data/processed/
+pytest                                     # roda os 33 testes
+python scripts/rodar_consulta.py           # lista as consultas de análise
+python scripts/rodar_consulta.py 12 --csv  # roda a consulta 12 (curva ABC) e salva em CSV
+python scripts/backup.py                   # backup do banco
 ```
 
-Para rodar os testes:
+## Automação
 
-```bash
-pytest
-```
+O pipeline roda todos os dias às 06:30 pelo Agendador de Tarefas do Windows, via `scripts/executar_pipeline.bat`, que também executa o backup depois de uma execução bem-sucedida. O resultado fica em `logs/agendador.log`; uma falha cria `logs/ULTIMA_FALHA.txt`. Se o computador estiver desligado no horário, a tarefa roda assim que ele for ligado.
 
-## Qualidade de dados
+## Qualidade de dados e observabilidade
 
 Linhas inválidas não derrubam o pipeline: são separadas em `data/processed/rejeitadas_*.csv`, com o motivo ao lado, e as demais seguem.
 
-| Regra | Aplica-se a |
+| Regra de validação | Aplica-se a |
 |---|---|
 | Data inválida (formato `aaaa-mm-dd`) | vendas, compras |
 | Quantidade menor ou igual a zero, ou não inteira | vendas, compras |
@@ -118,13 +158,24 @@ Linhas inválidas não derrubam o pipeline: são separadas em `data/processed/re
 | Linha duplicada (mesmo `id_venda` e `sku`) | vendas |
 | `id_venda` vazio | vendas |
 
+Depois da carga, o pipeline ainda faz verificações de saúde dos dados:
+
+| Alerta | Quando dispara |
+|---|---|
+| Linhas rejeitadas | mais de 5% de vendas ou compras, ou qualquer erro no cadastro de produtos |
+| Dados parados | nenhuma venda nova há mais de 3 dias (só com a planilha real) |
+| Estoque negativo | saiu mais do que entrou: falta registrar uma compra |
+| Venda abaixo do custo | preço ou desconto digitado errado |
+
 Outras garantias:
 
-- **Idempotência:** as tabelas de fatos são recarregadas por inteiro a cada execução. Rodar o pipeline várias vezes dá o mesmo resultado, e correções feitas na planilha chegam ao banco.
+- **Idempotência:** as tabelas de fatos são recarregadas por inteiro a cada execução; rodar várias vezes dá o mesmo resultado e correções na planilha chegam ao banco.
 - **Transação com rollback:** se a carga falhar, o banco volta ao estado anterior.
-- **Reconciliação:** após a carga, o pipeline confere se a contagem e o faturamento no banco batem com o calculado.
-- **Números ambíguos são rejeitados:** valores com vírgula decimal (`29,9`) não são convertidos em silêncio, para nunca gerar dado falso.
-- **Testes automatizados:** 12 testes cobrindo transformação, validação e idempotência da carga.
+- **Reconciliação:** a contagem e o faturamento carregados são conferidos contra o calculado.
+- **Números ambíguos são rejeitados:** valores com vírgula decimal (`29,9`) não são convertidos em silêncio.
+- **Backup:** 14 cópias do banco e 30 snapshots da planilha, com cópia opcional em pasta de nuvem.
+- **Alertas por e-mail** opcionais, configurados no `.env`.
+- **CI:** testes, pipeline completo com dados fictícios (com erros de propósito) e as 14 consultas rodam no GitHub Actions a cada push.
 
 ## Análises
 
@@ -173,27 +224,7 @@ As consultas de `sql/03_analises.sql` respondem a perguntas do dia a dia da loja
 | CEL-006 | Smartphone Gama Lite 64GB | Celular | 6.989,73 | 85,4 | B |
 | ACE-006 | Power bank 10000mAh | Acessório | 5.805,15 | 88,1 | B |
 
-Resumo das classes: 8 produtos na classe A (82% da receita), 6 na B (cerca de 13%) e 8 na C (menos de 5%).
-
-**O que os números mostram:** celulares e motos elétricas somam cerca de 85% do faturamento, mas as motos têm a menor margem (28,6%). Acessórios e perfumes vendem muitas unidades (237 juntas) e têm margem de 57% a 63%, porém pesam pouco no faturamento (cerca de 15%). Na curva ABC, 8 dos 22 produtos (3 motos e 5 celulares) formam a classe A, e só a moto Volt 1500W responde por 20% da receita. Os 8 produtos da classe C somam menos de 5%. Como os dados são fictícios, os valores ilustram o método; com dados reais, essa leitura ajuda a decidir o que comprar, o que promover e o que repensar no estoque.
-
-## Dashboard
-
-Painel interativo em Streamlit com indicadores comparados ao período anterior, evolução de vendas, curva ABC, alertas de estoque e análise por forma de pagamento e vendedor.
-
-![Visão geral](docs/dashboard_visao_geral.png)
-
-Para abrir: `streamlit run dashboards/app.py`
-
-## Automação
-
-O pipeline roda todos os dias às 06:30 pelo Agendador de Tarefas do Windows, via `scripts/executar_pipeline.bat`. O script registra o resultado em `logs/agendador.log` e cria `logs/ULTIMA_FALHA.txt` quando uma execução falha. Se o computador estiver desligado no horário, a tarefa roda assim que ele for ligado.
-
-## Observabilidade
-
-- **Alertas:** verificações após cada carga (linhas rejeitadas, dados parados, estoque negativo, venda abaixo do custo), registradas em `logs/ALERTAS.txt` e, opcionalmente, enviadas por e-mail.
-- **Backup:** cópia diária do banco (14 dias) e da planilha bruta (30 dias), com cópia opcional em nuvem.
-- **CI:** testes, pipeline completo e consultas SQL rodam no GitHub Actions a cada push.
+**O que os números mostram:** celulares e motos elétricas somam cerca de 85% do faturamento, mas as motos têm a menor margem (28,6%). Acessórios e perfumes vendem muitas unidades (237 juntas) e têm margem de 57% a 63%, porém pesam pouco no faturamento (cerca de 15%). Na curva ABC, 8 dos 22 produtos (3 motos e 5 celulares) formam a classe A, e só a moto Volt 1500W responde por 20% da receita. Com dados reais, essa leitura ajuda a decidir o que comprar, o que promover e o que repensar no estoque.
 
 ### Cuidados ao interpretar
 
@@ -201,9 +232,28 @@ O pipeline roda todos os dias às 06:30 pelo Agendador de Tarefas do Windows, vi
 - A `dim_tempo` guarda só as datas com venda ou compra, então as análises por dia da semana usam totais, não médias por dia.
 - A margem é lucro bruto (receita menos custo do produto), sem taxas de cartão, aluguel ou impostos.
 
+## Decisões de projeto
+
+| Decisão | Alternativa | Por que escolhi |
+|---|---|---|
+| SQLite | PostgreSQL | Volume pequeno (cerca de 2 vendas por dia) e zero infraestrutura; a camada SQL é portável |
+| Recarga completa das tabelas de fatos | Carga incremental | Correções na planilha chegam ao banco, e o custo é irrelevante nesse volume |
+| Rejeitar linhas inválidas em arquivo | Parar o pipeline | Um erro de digitação não pode impedir o dono de ver o restante |
+| Streamlit | Metabase | Painel versionado como código e sem dependência de Java ou Docker |
+| Agendador de Tarefas | Airflow | Uma execução diária não justifica um orquestrador; fica como evolução |
+| Rejeitar vírgula decimal | Converter automaticamente | `1,500` pode ser mil e quinhentos ou um e meio; prefiro erro visível a dado falso |
+
+## Limitações e próximos passos
+
+- Hoje o painel e o pipeline rodam em um único computador; o próximo passo é hospedar na nuvem.
+- Garantia por produto e assistência técnica ainda não estão modelados.
+- Calendário sazonal em `dim_tempo` para comparar promoções (Black Friday, Natal).
+- Migração para PostgreSQL, carga incremental e transformações com dbt.
+- Previsão simples de demanda para sugerir reposição.
+
 ## Privacidade
 
-O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais da loja, o banco `loja.db`, o arquivo `.env` e os logs ficam fora do Git.
+O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais da loja, o banco `loja.db`, o arquivo `.env`, os backups e os logs ficam fora do Git.
 
 ## Roteiro
 
@@ -216,10 +266,10 @@ O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais
 - [x] Fase 6: dashboard
 - [x] Fase 7: execução automática diária
 - [x] Fase 8: observabilidade (alertas, backup, CI)
-
-**Evoluções planejadas:** garantia por produto, tabela de assistência técnica, calendário de datas sazonais para comparar promoções, PostgreSQL, carga incremental e dbt.
+- [x] Fase 9: documentação e portfólio
+- [ ] Colocar a loja real no ar (planilha real, `USE_SAMPLE=false`)
 
 ## Autor
 
-Richard Lucian — estudante de Ciência da Computação (UFRRJ), com foco em Engenharia de Dados.
+Richard Lucian: estudante de Ciência da Computação (UFRRJ), com foco em Engenharia de Dados.
 [LinkedIn](https://www.linkedin.com/in/richard-lucian)
