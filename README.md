@@ -267,7 +267,6 @@ O repositório contém apenas **dados fictícios** (`data/sample/`). Dados reais
 - [x] Fase 7: execução automática diária
 - [x] Fase 8: observabilidade (alertas, backup, CI)
 - [x] Fase 9: documentação e portfólio
-- [ ] Colocar a loja real no ar (planilha real, `USE_SAMPLE=false`)
 
 ## Autor
 
