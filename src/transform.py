@@ -1,6 +1,8 @@
 """Limpeza e padronização. Não descarta linhas: quem rejeita é o validate.py."""
 import pandas as pd
 
+from config import settings
+
 NOMES_DIA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 
 
@@ -8,20 +10,33 @@ def _texto(s: pd.Series) -> pd.Series:
     return s.astype("string").str.strip().fillna("")
 
 
+# número no formato brasileiro: 1499 | 1499,90 | 1.499 | 1.499,90
+_NUMERO_BR = r"^-?\d{1,3}(?:\.\d{3})*(?:,\d+)?$|^-?\d+(?:,\d+)?$"
+
+
 def _numero(s: pd.Series) -> pd.Series:
-    """Converte texto em número (ponto decimal). Aceita 'R$ 29.90' e '1,499.00'.
-    O que não der para converter vira NaN e é rejeitado na validação."""
-    limpo = (
-        s.astype("string")
-        .str.replace(r"R\$|\s", "", regex=True)
-        .str.replace(r"(?<=\d),(?=\d{3}(?:\D|$))", "", regex=True)  # separador de milhar
-        .astype(object)
-    )
-    return pd.to_numeric(limpo, errors="coerce")
+    """Converte texto em número, conforme a localidade da planilha (LOCALE_PLANILHA).
+    en-US: aceita 'R$ 29.90' e '1,499.00'.  pt-BR: aceita 'R$ 29,90' e '1.499,00'.
+    O que não der para converter com segurança vira NaN e é rejeitado na validação
+    (por exemplo, '29.9' numa planilha pt-BR, que poderia ser lido errado)."""
+    limpo = s.astype("string").str.replace(r"R\$|\s", "", regex=True)
+    if settings.LOCALE_PLANILHA == "pt-BR":
+        valido = limpo.str.match(_NUMERO_BR).fillna(False)
+        limpo = (limpo.where(valido)
+                 .str.replace(".", "", regex=False)       # ponto = separador de milhar
+                 .str.replace(",", ".", regex=False))     # vírgula = decimal
+    else:
+        limpo = limpo.str.replace(r"(?<=\d),(?=\d{3}(?:\D|$))", "", regex=True)  # vírgula = milhar
+    return pd.to_numeric(limpo.astype(object), errors="coerce")
 
 
 def _data(s: pd.Series) -> pd.Series:
-    return pd.to_datetime(_texto(s), format="%Y-%m-%d", errors="coerce")
+    """Aceita aaaa-mm-dd; na planilha pt-BR aceita também dd/mm/aaaa."""
+    texto = _texto(s)
+    datas = pd.to_datetime(texto, format="%Y-%m-%d", errors="coerce")
+    if settings.LOCALE_PLANILHA == "pt-BR":
+        datas = datas.fillna(pd.to_datetime(texto, format="%d/%m/%Y", errors="coerce"))
+    return datas
 
 
 def normalizar_produtos(df: pd.DataFrame) -> pd.DataFrame:

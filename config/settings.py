@@ -18,6 +18,11 @@ SHEET_ID = os.getenv("SHEET_ID", "")
 # true = lê os CSVs fictícios de data/sample | false = lê a planilha real
 USE_SAMPLE = os.getenv("USE_SAMPLE", "true").lower() == "true"
 
+# Localidade da planilha (Arquivo > Configurações > Localidade):
+#   en-US = Estados Unidos (ponto decimal, datas aaaa-mm-dd)
+#   pt-BR = Brasil (vírgula decimal, e datas digitadas como 06/11/2026 são lidas como dia/mês/ano)
+LOCALE_PLANILHA = os.getenv("LOCALE_PLANILHA", "en-US")
+
 # gid de cada aba da planilha (aparece na URL: #gid=...)
 ABAS = {
     "produtos": 0,

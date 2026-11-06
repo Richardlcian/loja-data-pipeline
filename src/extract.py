@@ -30,6 +30,15 @@ def extrair_aba(nome: str) -> pd.DataFrame:
         raise ValueError(f"Aba '{nome}' sem as colunas: {faltando}")
 
     df = df[settings.COLUNAS[nome]]
+
+    # A planilha pode exportar linhas totalmente em branco (só vírgulas ou espaços), por exemplo
+    # depois de apagar dados ou com linhas vazias no meio. Elas não são dados: são ignoradas.
+    texto = df.fillna("").apply(lambda coluna: coluna.str.strip())
+    em_branco = (texto == "").all(axis=1)
+    if em_branco.any():
+        log.info("Ignoradas %d linhas em branco da aba '%s'", int(em_branco.sum()), nome)
+    df = df[~em_branco]
+
     log.info("Extraídas %d linhas da aba '%s'", len(df), nome)
     return df
 
