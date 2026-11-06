@@ -39,3 +39,34 @@ def test_dim_tempo_inclui_datas_de_vendas_e_compras():
     dim = transform.gerar_dim_tempo(pd.Series(["2026-11-03"]), pd.Series(["2026-11-01", "2026-11-03"]))
     assert list(dim["data"]) == ["2026-11-01", "2026-11-03"]
     assert dim.loc[1, "nome_dia"] == "Terça"
+
+
+def _compras(*linhas):
+    df = pd.DataFrame(linhas, columns=["data", "sku", "custo_unitario"])
+    df["data"] = pd.to_datetime(df["data"])
+    return df
+
+
+def test_custo_da_venda_vem_da_ultima_compra_ate_a_data():
+    produtos = pd.DataFrame({"sku": ["CEL-001"], "custo_unitario": [700.0]})     # cadastro: deve ser ignorado
+    compras = _compras(("2026-11-01", "CEL-001", 900.0), ("2026-11-10", "CEL-001", 1000.0))
+    vendas = pd.concat([transform.normalizar_vendas(_vendas_brutas(data="2026-11-05", quantidade="1", desconto="0")),
+                        transform.normalizar_vendas(_vendas_brutas(data="2026-11-12", id_venda="V2",
+                                                                    quantidade="1", desconto="0"))])
+    r = transform.calcular_vendas(vendas, produtos, compras).sort_values("data")
+    assert list(r["custo_total"]) == [900.0, 1000.0]
+
+
+def test_sem_compra_anterior_usa_o_custo_do_cadastro():
+    produtos = pd.DataFrame({"sku": ["CEL-001"], "custo_unitario": [700.0]})
+    compras = _compras(("2026-11-20", "CEL-001", 900.0))                         # depois da venda
+    vendas = transform.normalizar_vendas(_vendas_brutas(data="2026-11-05", quantidade="2", desconto="0"))
+    assert transform.calcular_vendas(vendas, produtos, compras).loc[0, "custo_total"] == 1400.0
+
+
+def test_mudar_o_custo_no_cadastro_nao_altera_venda_antiga():
+    compras = _compras(("2026-11-01", "CEL-001", 900.0))
+    vendas = transform.normalizar_vendas(_vendas_brutas(data="2026-11-05", quantidade="1", desconto="0"))
+    antes = transform.calcular_vendas(vendas, pd.DataFrame({"sku": ["CEL-001"], "custo_unitario": [700.0]}), compras)
+    depois = transform.calcular_vendas(vendas, pd.DataFrame({"sku": ["CEL-001"], "custo_unitario": [1200.0]}), compras)
+    assert antes.loc[0, "custo_total"] == depois.loc[0, "custo_total"] == 900.0

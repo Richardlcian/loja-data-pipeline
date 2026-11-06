@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "loja.db"
+# Banco de dados. Para testar sem tocar no banco real: DB_PATH=loja_teste.db python -m src.pipeline
+_db = Path(os.getenv("DB_PATH", "loja.db"))
+DB_PATH = _db if _db.is_absolute() else BASE_DIR / _db
 SQL_DIR = BASE_DIR / "sql"
 SAMPLE_DIR = BASE_DIR / "data" / "sample"
 PROCESSED_DIR = BASE_DIR / "data" / "processed"

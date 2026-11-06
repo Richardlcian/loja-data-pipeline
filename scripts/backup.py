@@ -19,7 +19,8 @@ from dotenv import load_dotenv
 RAIZ = Path(__file__).resolve().parent.parent
 load_dotenv(RAIZ / ".env")
 
-BANCO = RAIZ / "loja.db"
+_db = Path(os.getenv("DB_PATH", "loja.db"))
+BANCO = _db if _db.is_absolute() else RAIZ / _db
 PASTA_BACKUPS = RAIZ / "backups"
 PASTA_SNAPSHOTS = RAIZ / "data" / "raw"
 MANTER_BACKUPS = 14

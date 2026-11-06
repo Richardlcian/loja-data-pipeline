@@ -5,16 +5,20 @@ Executa as consultas de sql/03_analises.sql pelo terminal.
     python scripts/rodar_consulta.py 3        # roda a consulta 3 e mostra o resultado
     python scripts/rodar_consulta.py 3 --csv  # também salva em data/processed/consulta_3.csv
 """
+import os
 import re
 import sqlite3
 import sys
 from pathlib import Path
 
 import pandas as pd
+from dotenv import load_dotenv
 
 RAIZ = Path(__file__).resolve().parent.parent
 ARQUIVO_SQL = RAIZ / "sql" / "03_analises.sql"
-BANCO = RAIZ / "loja.db"
+load_dotenv(RAIZ / ".env")
+_db = Path(os.getenv("DB_PATH", "loja.db"))
+BANCO = _db if _db.is_absolute() else RAIZ / _db
 
 
 def carregar_consultas() -> dict[int, tuple[str, str]]:

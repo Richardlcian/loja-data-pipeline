@@ -21,7 +21,7 @@ Projeto desenvolvido para uma loja física real, em fase de inauguração, e usa
 
 ## Destaques
 
-- **Modelo dimensional** (esquema estrela) com custo gravado no momento da venda
+- **Modelo dimensional** (esquema estrela) com o custo de cada venda vindo do histórico de compras
 - **Validação de dados** com 9 regras para vendas; linhas inválidas são isoladas em arquivo, sem derrubar o pipeline
 - **Carga idempotente** com transação e reconciliação de totais
 - **14 consultas SQL** de negócio, incluindo funções de janela e curva ABC
@@ -108,7 +108,7 @@ loja-data-pipeline/
 Esquema estrela com `fato_vendas` e `fato_compras` ao centro, cercadas pelas dimensões `dim_produto`, `dim_tempo`, `dim_vendedor` e `dim_cliente`.
 
 - **Granularidade:** uma linha de `fato_vendas` por item vendido (uma venda com dois itens gera duas linhas com o mesmo `id_venda`).
-- **Custo no momento da venda:** `custo_total` é gravado na venda, então a margem histórica não muda quando o custo do produto muda.
+- **Custo da venda:** o `custo_total` usa o custo da última compra registrada até a data da venda (ou o custo do cadastro, se ainda não houve compra), então a margem histórica não muda quando o custo do produto muda.
 - **Chave natural e substituta:** `sku` identifica o produto no negócio; `id_produto` é a chave do banco.
 - **Estoque derivado:** o estoque atual é calculado pela view `vw_estoque_atual` (compras menos vendas), sem tabela própria.
 

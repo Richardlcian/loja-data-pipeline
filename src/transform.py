@@ -58,14 +58,32 @@ def normalizar_compras(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def calcular_vendas(vendas: pd.DataFrame, produtos: pd.DataFrame) -> pd.DataFrame:
-    """Recebe vendas já validadas. Grava o custo no momento da venda."""
-    df = vendas.merge(produtos[["sku", "custo_unitario"]], on="sku", how="left")
+def calcular_vendas(vendas: pd.DataFrame, produtos: pd.DataFrame, compras: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Recebe vendas já validadas e calcula valor_total e custo_total.
+
+    O custo de cada venda é o da ÚLTIMA COMPRA registrada até a data da venda. Assim, mudar o custo
+    no cadastro de produtos não altera a margem de vendas antigas. Se o produto ainda não tem
+    nenhuma compra até aquela data, usa o custo do cadastro."""
+    df = vendas.sort_values("data", kind="stable").merge(
+        produtos[["sku", "custo_unitario"]].rename(columns={"custo_unitario": "custo_cadastro"}),
+        on="sku", how="left")
+
+    if compras is not None and len(compras) and len(df):
+        ultimas = compras[["data", "sku", "custo_unitario"]].sort_values("data", kind="stable")
+        ultimas["sku"] = ultimas["sku"].astype(object)   # as chaves precisam ter o mesmo tipo
+        ultimas["data"] = ultimas["data"].astype(df["data"].dtype)
+        df["sku"] = df["sku"].astype(object)
+        df = pd.merge_asof(df, ultimas, on="data", by="sku", direction="backward")
+        df["custo_unit"] = df["custo_unitario"].fillna(df["custo_cadastro"])
+        df = df.drop(columns="custo_unitario")
+    else:
+        df["custo_unit"] = df["custo_cadastro"]
+
     df["data"] = df["data"].dt.strftime("%Y-%m-%d")
     df["quantidade"] = df["quantidade"].astype(int)
     df["valor_total"] = (df["quantidade"] * df["preco_unitario"] - df["desconto"]).round(2)
-    df["custo_total"] = (df["quantidade"] * df["custo_unitario"]).round(2)
-    return df.drop(columns="custo_unitario")
+    df["custo_total"] = (df["quantidade"] * df["custo_unit"]).round(2)
+    return df.drop(columns=["custo_cadastro", "custo_unit"]).reset_index(drop=True)
 
 
 def preparar_compras(compras: pd.DataFrame) -> pd.DataFrame:

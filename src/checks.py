@@ -23,9 +23,7 @@ def verificar(con, resumo: dict, verificar_frescor: bool = True, hoje: date | No
     # 2. dados parados: ninguém registrou venda recentemente
     if verificar_frescor:
         ultima = con.execute("SELECT MAX(data) FROM fato_vendas").fetchone()[0]
-        if ultima is None:
-            alertas.append("Nenhuma venda carregada no banco.")
-        else:
+        if ultima is not None:       # sem nenhuma venda ainda = loja começando, não é alerta
             dias = (hoje - date.fromisoformat(ultima)).days
             if dias > LIMITE_DIAS_SEM_VENDA:
                 alertas.append(f"Sem venda registrada há {dias} dias (última em {ultima}). "

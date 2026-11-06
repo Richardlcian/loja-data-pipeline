@@ -6,7 +6,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BANCO = Path(__file__).resolve().parent.parent / "loja.db"
+from config import settings
+
+BANCO = settings.DB_PATH
 FREQUENCIAS = {"Dia": "D", "Semana": "W-MON", "Mês": "MS"}
 
 

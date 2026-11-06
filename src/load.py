@@ -76,3 +76,14 @@ def recarregar_fatos(con, vendas: pd.DataFrame, compras: pd.DataFrame) -> None:
         _linhas(c[["data", "id_produto", "quantidade", "custo_unitario", "fornecedor"]]),
     )
     log.info("Carga concluída: %d vendas, %d compras", len(v), len(c))
+
+
+def remover_produtos_ausentes(con, skus_da_planilha: set) -> int:
+    """Produtos apagados da planilha também saem do banco. Só roda depois de recarregar_fatos:
+    as vendas e compras carregadas só usam SKUs que existem na planilha, então nada fica órfão."""
+    no_banco = {sku for (sku,) in con.execute("SELECT sku FROM dim_produto")}
+    sobras = no_banco - set(skus_da_planilha)
+    con.executemany("DELETE FROM dim_produto WHERE sku = ?", [(s,) for s in sobras])
+    if sobras:
+        log.info("Removidos do banco %d produto(s) que não estão mais na planilha", len(sobras))
+    return len(sobras)

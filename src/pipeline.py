@@ -27,7 +27,7 @@ def executar(dados: dict, con) -> dict:
     compras_n = transform.normalizar_compras(dados["compras"])
     compras_v, compras_rej = validate.validar_compras(compras_n, skus)
 
-    vendas = transform.calcular_vendas(vendas_v, produtos)
+    vendas = transform.calcular_vendas(vendas_v, produtos, compras_v)
     compras = transform.preparar_compras(compras_v)
     dim_tempo = transform.gerar_dim_tempo(vendas["data"], compras["data"])
 
@@ -37,6 +37,7 @@ def executar(dados: dict, con) -> dict:
         load.sincronizar_vendedores(con, vendas)
         load.sincronizar_dim_tempo(con, dim_tempo)
         load.recarregar_fatos(con, vendas, compras)
+        load.remover_produtos_ausentes(con, skus)
         con.commit()
     except Exception:
         con.rollback()

@@ -31,14 +31,23 @@ if not dados.BANCO.exists():
 
 vendas, estoque = carregar()
 if vendas.empty:
-    st.warning("O banco ainda não tem vendas. Rode o pipeline: `python -m src.pipeline`")
+    st.title("📊 Painel da Loja")
+    st.info("Ainda não há vendas registradas. Assim que a primeira venda entrar na planilha e o pipeline "
+            "rodar, os indicadores aparecem aqui.")
+    if estoque.empty:
+        st.caption("O cadastro de produtos também está vazio.")
+    else:
+        st.subheader("Estoque atual")
+        st.dataframe(estoque.rename(columns={"produto": "Produto", "categoria": "Categoria",
+                                             "estoque_atual": "Estoque"}).drop(columns="sku"),
+                     hide_index=True)
     st.stop()
 
 # ------------------------------------------------------------------ filtros
 st.sidebar.header("Filtros")
 data_min = vendas["data"].min().date()
 data_max = vendas["data"].max().date()
-inicio_padrao = max(data_min, data_max - timedelta(days=60))
+inicio_padrao = max(data_min, data_max - timedelta(days=29))
 
 periodo = st.sidebar.date_input(
     "Período", value=(inicio_padrao, data_max),
