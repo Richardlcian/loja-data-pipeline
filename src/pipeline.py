@@ -72,6 +72,11 @@ def salvar_rejeitadas(rejeitadas: dict) -> None:
         if len(df):
             df.to_csv(arquivo, index=False, encoding="utf-8")
             log.warning("%d linhas rejeitadas de '%s' salvas em %s", len(df), nome, arquivo.name)
+            for indice, linha in df.head(5).iterrows():       # mostra as primeiras direto no log
+                conteudo = ", ".join(f"{col}={valor}" for col, valor in linha.drop("motivo_rejeicao").items()
+                                     if pd.notna(valor) and str(valor).strip()) or "(sem conteúdo)"
+                log.warning("  linha %d da planilha, aba '%s': %s | motivo: %s",
+                            indice + 2, nome, conteudo, linha["motivo_rejeicao"])
         elif arquivo.exists():
             arquivo.unlink()  # evita ler um arquivo antigo de uma execução anterior
 
