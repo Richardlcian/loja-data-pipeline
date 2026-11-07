@@ -1,6 +1,6 @@
 # Loja Data Pipeline
 
-![CI](https://github.com/Richardlcian/loja-data-pipeline/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/Richardlcian/loja-data-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/Richardlcian/loja-data-pipeline/actions/workflows/ci.yml)
 
 Pipeline de dados de ponta a ponta para uma loja física de celulares, motos elétricas, acessórios e perfumes: coleta os registros da loja em uma planilha, valida e transforma em Python, carrega em um banco com modelo dimensional, executa todo dia sozinho, avisa quando algo está errado e entrega um dashboard para o dono decidir com dados.
 
