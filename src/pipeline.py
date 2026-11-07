@@ -1,6 +1,7 @@
 """Orquestra o ETL: extrair -> normalizar -> validar -> calcular -> carregar.
 Execute na raiz do projeto:  python -m src.pipeline"""
 import logging
+import sys
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
 
@@ -114,6 +115,11 @@ def rodar() -> None:
 
 
 def main() -> None:
+    # no Windows, a saída redirecionada (pipe ou arquivo) usa a codificação do sistema e quebra os acentos
+    for fluxo in (sys.stdout, sys.stderr):
+        if hasattr(fluxo, "reconfigure"):
+            fluxo.reconfigure(encoding="utf-8")
+
     settings.LOGS_DIR.mkdir(exist_ok=True)
     logging.basicConfig(
         level=logging.INFO,
